@@ -16,7 +16,16 @@
 			</div>
 		</div>
     <div class="right">
-			<img src="/images/2.png" class="inner-img" alt="">
+			<video
+				class="inner-img"
+				loop
+				autoplay
+				muted
+				preload="auto"
+				playsinline
+				disablePictureInPicture
+				src="/images/video.mp4"
+			/>
 
 			<div class="info mob">
 				<p>E: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
@@ -54,7 +63,8 @@ onMounted(() => {
 	color: var(--c-accent);
 	@include mobile {
 		grid-template-columns: 1fr;
-		font-size: .875rem;
+		font-size: .75rem;
+		line-height: 1.1;
 	}
 
 }
@@ -71,6 +81,7 @@ onMounted(() => {
 }
 .top {
 	text-indent: 15.625rem;
+	text-align: justify;
 	@include mobile {
 		text-indent: 8.5rem;
 	}
