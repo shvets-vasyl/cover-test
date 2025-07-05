@@ -1,0 +1,31 @@
+@use "./utils" as *;
+
+// viewport
+
+:root {
+  --viewport: 1440;
+
+  @include mobile {
+    --viewport: 375;
+  }
+}
+
+// fonts
+
+:root {
+  --font-medium: "Medium";
+}
+
+// transitions
+
+:root {
+  --default-ease: cubic-bezier(0.24, 1, 0.36, 1);
+}
+
+// colors
+
+:root {
+  --c-black: #000000;
+  --c-white: #ffffff;
+	--c-accent: #E1321F;
+}
