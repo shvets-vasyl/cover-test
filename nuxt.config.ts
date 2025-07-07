@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "We’re DogaDoga, a creative agency built for brands ready to leave a mark. We work across strategy, campaigns, video production, design, and generative AI to deliver bold, purposeful content. Clear ideas, sharp storytelling, and work that connects. ",
+            "DogaDoga is a creative agency that turns bold ideas into sharp content. From video and campaigns to AI-driven storytelling, we make brands impossible to ignore.",
         },
         {
           name: "viewport",
@@ -54,10 +54,14 @@ export default defineNuxtConfig({
           property: "og:image:type",
           content: "image/jpeg",
         },
+				{
+          property: "og:image",
+          content: "/og.png",
+        },
         {
           property: "og:description",
           content:
-            "We’re DogaDoga, a creative agency built for brands ready to leave a mark. We work across strategy, campaigns, video production, design, and generative AI to deliver bold, purposeful content. Clear ideas, sharp storytelling, and work that connects. ",
+            "DogaDoga is a creative agency that turns bold ideas into sharp content. From video and campaigns to AI-driven storytelling, we make brands impossible to ignore. ",
         },
         {
           property: "og:title",
@@ -72,6 +76,7 @@ export default defineNuxtConfig({
           content: "website",
         },
       ],
+			link: [{ rel: "icon", type: "image/png", href: "/fav_2.png" }],
     },
   },
 
