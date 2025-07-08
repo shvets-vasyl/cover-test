@@ -7,8 +7,8 @@
 				<IconsLogo />
 			</div>
 			<div class="info desk">
-				<p>E: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
-				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.agency</a></p>
+				<p>Email: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
+				<p>Instagram: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.agency</a></p>
 			</div>
 
 			<div class="top mob">
