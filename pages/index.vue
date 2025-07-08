@@ -8,7 +8,7 @@
 			</div>
 			<div class="info desk">
 				<p>E: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
-				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.studio</a></p>
+				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.agency</a></p>
 			</div>
 
 			<div class="top mob">
@@ -29,7 +29,7 @@
 
 			<div class="info mob">
 				<p>E: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
-				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.studio</a></p>
+				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.agency</a></p>
 			</div>
 
 			<div class="top desk">
@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="bot">
-				Website’s in the works. (It asked for some space.)
+				Website’s in the works. (It asked for some space)
 			</div>
 		</div>
   </main>
@@ -65,6 +65,7 @@ onMounted(() => {
 		grid-template-columns: 1fr;
 		font-size: .75rem;
 		line-height: 1.1;
+		height: auto;
 	}
 
 }
@@ -74,6 +75,10 @@ onMounted(() => {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	@include mobile {
+		height: 29.875rem;
+		padding: 1.25rem;
+	}
 }
 .top, .bot {
 	position: relative;
