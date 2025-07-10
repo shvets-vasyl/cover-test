@@ -3,6 +3,10 @@
     <div class="left">
 			<img src="/images/1.png" class="inner-img" alt="">
 
+			<button class="left-btn" @click="showLeft">
+				<CommonButtonTemplate text="Showreel" icon />
+			</button>
+
 			<div class="logo">
 				<IconsLogo />
 			</div>
@@ -16,6 +20,10 @@
 			</div>
 		</div>
     <div class="right">
+			<button class="right-btn" @click="showRight">
+				<CommonButtonTemplate text="AI showreel" icon />
+			</button>
+
 			<video
 				class="inner-img"
 				loop
@@ -40,16 +48,36 @@
 				Website’s in the works. (It asked for some space)
 			</div>
 		</div>
+
+		<ClientOnly>
+			<div class="video-left">
+				<CommonVideo src="/video/showreel.mp4" />
+			</div>
+
+			<div class="video-right">
+				<CommonVideo src="/video/ai-showreel.mp4" />
+			</div>
+		</ClientOnly>
   </main>
 </template>
 <script setup lang="ts">
-
-
 onMounted(() => {
 	gsap.to(".main-page", {
 		opacity: 1,
 	})
 })
+
+const showLeftVideo = useState("show-left", () => false)
+const showRightVideo = useState("show-right", () => false)
+
+const showLeft = () => {
+  showLeftVideo.value = true
+  gsap.to(".video-left", { autoAlpha: 1, duration: 0.3 })
+}
+const showRight = () => {
+  showRightVideo.value = true
+  gsap.to(".video-right", { autoAlpha: 1, duration: 0.3 })
+}
 </script>
 <style scoped lang="scss">
 .main-page {
@@ -96,11 +124,37 @@ onMounted(() => {
 }
 .logo {
 	width: 12rem;
-	z-index: 2;
+	z-index: 100;
 	position: relative;
 }
 .info {
 	position: relative;
 	z-index: 2;
+}
+.left-btn, .right-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+
+	@include mobile {
+		font-size: .875rem;
+	}
+}
+.video-left, .video-right {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+  opacity: 0;
+	visibility: hidden;
+  transition: all .3s ease;
+	@include mobile {
+		height: 100vh;
+		height: 100dvh;
+		position: fixed;
+	}
 }
 </style>
