@@ -1,6 +1,6 @@
 @use "./utils" as *;
 .hover-fade {
-	transition: all .3s ease;
+	transition: opacity .5s ease;
 }
 @include hover {
 	.hover-fade:hover {

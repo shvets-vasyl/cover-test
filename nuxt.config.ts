@@ -15,7 +15,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
   app: {
     head: {
       charset: "utf-8",
@@ -75,8 +74,12 @@ export default defineNuxtConfig({
           property: "og:type",
           content: "website",
         },
+        {
+          name: "color-scheme",
+          content: "light dark",
+        },
       ],
-			link: [{ rel: "icon", type: "image/png", href: "/fav_2.png" }],
+      link: [{ rel: "icon", type: "image/png", href: "/fav_2.png" }],
     },
   },
 

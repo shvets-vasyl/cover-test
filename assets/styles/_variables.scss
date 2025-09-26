@@ -13,13 +13,13 @@
 // fonts
 
 :root {
-  --font-medium: "Medium";
+  --font-semibold: "Semibold";
 }
 
 // transitions
 
 :root {
-  --default-ease: cubic-bezier(0.24, 1, 0.36, 1);
+	--default-ease: cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 // colors
@@ -28,4 +28,13 @@
   --c-black: #000000;
   --c-white: #ffffff;
 	--c-accent: #E1321F;
+	--c-dark: #191919;
+}
+
+// Dark theme overrides
+html[data-theme="light"] {
+  --c-black: #ffffff;
+  --c-white: #000000;
+  --c-accent: #191919;
+  --c-dark: #ffffff;
 }
