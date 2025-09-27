@@ -1,13 +1,18 @@
 <template>
-  <main class="main-page">
+  <main class="main-page" :class="{list: viewType === 'list'}">
 		<CommonBlur />
 
+
     <HeaderMain />
-		<MainProjects />
+		<MainList v-if="viewType === 'list'" />
+		<MainGallery v-if="viewType === 'gallery'" />
 		<TheFooter />
   </main>
 </template>
 <script setup lang="ts">
+type view = 'gallery' | 'list'
+const viewType = useState<view>('view-type')
+
 onMounted(() => {
 	gsap.to(".main-page", {
 		opacity: 1,
@@ -16,7 +21,6 @@ onMounted(() => {
 </script>
 <style scoped lang="scss">
 .main-page {
-	overflow: hidden;
 	position: relative;
 	opacity: 0;
 }

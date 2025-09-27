@@ -1,7 +1,9 @@
 <template>
 	<ul class="nav">
 		<li v-for="({href, label}, index) in nav" :key="index" class="p1">
-			<nuxt-link :to="href" class="hover-fade">{{ label }}</nuxt-link>
+			<nuxt-link :to="href">
+				<CommonLinkTemplate :text="label" />
+			</nuxt-link>
 		</li>
 	</ul>
 </template>

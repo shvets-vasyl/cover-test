@@ -4,12 +4,16 @@
 			class="theme-btn"
 			:class="{ active: theme === 'dark' }"
 			@click="setTheme('dark')"
-		/>
+		>
+			<span />
+		</button>
 		<button
 			class="theme-btn"
 			:class="{ active: theme === 'light' }"
 			@click="setTheme('light')"
-		/>
+		>
+			<span />
+		</button>
 	</div>
 </template>
 
@@ -35,19 +39,48 @@ onMounted(() => {
   gap: .3125rem;
 }
 .theme-btn {
-  width: .6875rem;
+	position: relative;
+	display: flex;
+	transition: transform .5s ease;
+}
+.theme-btn span {
+	width: .6875rem;
   height: .6875rem;
   border-radius: 100%;
   opacity: 0.3;
   background: var(--c-accent);
-	transition: opacity .5s ease;
+	transition: transform .5s ease;
 }
-.theme-btn.active {
+.theme-btn:after {
+	position: absolute;
+	top: 100%;
+	margin-top: 0.5rem;
+	right: 0;
+	white-space: nowrap;
+
+	background: var(--c-accent);
+	color: var(--c-dark);
+	padding: .125rem 0.5rem;
+	font-size: .625rem;
+	pointer-events: none;
+	opacity: 0;
+
+}
+.theme-btn:nth-child(1):after {
+	content: "Switch to dark theme"
+}
+.theme-btn:nth-child(2):after {
+	content: "Switch to light theme"
+}
+.theme-btn.active span {
   opacity: 1;
 }
 @include hover {
 	.theme-btn:hover {
-		opacity: 0.5;
+		transform: scale(1.2);
+	}
+	.theme-btn:hover:after {
+		opacity: 1;
 	}
 }
 </style>

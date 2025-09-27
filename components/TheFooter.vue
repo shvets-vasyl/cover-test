@@ -6,8 +6,8 @@
 		</div>
 
 		<div class="docs">
-			<a v-for="{label, href}, i in docs" :key="i" :href="href" class="link p1 hover-fade" target="_blank">
-				{{ label }}
+			<a v-for="{label, href}, i in docs" :key="i" :href="href" class="link p1" target="_blank">
+				<CommonLinkTemplate :text="label" />
 			</a>
 		</div>
 	</footer>

@@ -21,7 +21,7 @@
   top: 0;
 	left: 0;
   width: 100%;
-	height: 18.75rem;
+	height: 13.8125rem;
 	z-index: 100;
 
 	pointer-events: none;
@@ -53,5 +53,8 @@
   transition: all 1s;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+.main-page.list {
+	height: 18.75rem;
 }
 </style>

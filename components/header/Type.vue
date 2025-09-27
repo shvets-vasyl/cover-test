@@ -1,26 +1,26 @@
 <template>
   <div class="type p1">
 		<button
-			class="type-btn hover-fade"
+			class="type-btn"
 			:class="{ active: viewType === 'gallery' }"
 			@click="viewType = 'gallery'"
 		>
-			Gallery
+			<CommonLinkTemplate text="Gallery" />
 		</button>
 		<span>/</span>
 		<button
-			class="type-btn hover-fade"
+			class="type-btn"
 			:class="{ active: viewType === 'list' }"
 			@click="viewType = 'list'"
 		>
-			List
+			<CommonLinkTemplate text="List" />
 		</button>
 	</div>
 </template>
 
 <script setup lang="ts">
 type view = 'gallery' | 'list'
-const viewType = useState<view>('view-type', () => 'gallery')
+const viewType = useState<view>('view-type')
 </script>
 
 <style scoped lang="scss">
@@ -35,10 +35,5 @@ const viewType = useState<view>('view-type', () => 'gallery')
 }
 .type-btn.active {
   opacity: 1;
-}
-@include hover {
-	.type-btn:hover {
-		opacity: 0.5;
-	}
 }
 </style>

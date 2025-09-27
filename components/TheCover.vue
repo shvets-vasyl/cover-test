@@ -24,17 +24,6 @@
 				<CommonButtonTemplate text="AI showreel" icon />
 			</button>
 
-			<video
-				class="inner-img"
-				loop
-				autoplay
-				muted
-				preload="auto"
-				playsinline
-				disablePictureInPicture
-				src="/images/video.mp4"
-			/>
-
 			<div class="info mob">
 				<p>E: <a href="mailto:info@dogadoga.agency" class="hover-fade">info@dogadoga.agency</a></p>
 				<p>I: <a class="hover-fade" href="https://www.instagram.com/dogadoga.agency?igsh=dGJubm0wbjE3b3Fz" target="_blank">@dogadoga.agency</a></p>
@@ -51,11 +40,11 @@
 
 		<ClientOnly>
 			<div class="video-left">
-				<CommonVideo src="/video/showreel.mp4" />
+				<CommonVideo src="/video/showreel.webm" />
 			</div>
 
 			<div class="video-right">
-				<CommonVideo src="/video/ai-showreel.mp4" />
+				<CommonVideo src="/video/ai-showreel.webm" />
 			</div>
 		</ClientOnly>
   </main>
