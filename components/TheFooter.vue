@@ -34,6 +34,7 @@ const docs = [
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+	z-index: var(--z-footer);
 }
 .copy {
 	display: flex;

@@ -1,6 +1,9 @@
 <template>
   <main class="main-page">
+		<CommonBlur />
+
     <HeaderMain />
+		<MainProjects />
 		<TheFooter />
   </main>
 </template>
@@ -16,5 +19,8 @@ onMounted(() => {
 	overflow: hidden;
 	position: relative;
 	opacity: 0;
+}
+.main-page:deep(.blur) {
+	position: fixed;
 }
 </style>

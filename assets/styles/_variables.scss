@@ -38,3 +38,10 @@ html[data-theme="light"] {
   --c-accent: #191919;
   --c-dark: #ffffff;
 }
+
+// z index
+
+:root {
+  --z-header: 1000;
+  --z-footer: 1000;
+}

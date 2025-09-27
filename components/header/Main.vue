@@ -14,7 +14,12 @@
 </script>
 <style scoped lang='scss'>
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	padding: 1rem 1.5rem 0;
+	z-index: var(--z-header);
 }
 .content {
 	display: flex;
