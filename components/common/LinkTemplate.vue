@@ -35,7 +35,7 @@ onMounted(() => {
 
   tl = gsap.timeline({ paused: true })
   tl.to(split.chars, {
-    y: "-100%",
+    y: "-105%",
     duration: options.duration / 1000,
     stagger: { each: (options.duration / split.chars.length) / 2000, axis: "x" },
     ease: `cubic-bezier(${options.easing})`,

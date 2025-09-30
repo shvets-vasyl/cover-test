@@ -21,6 +21,10 @@
 <script setup lang="ts">
 type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type')
+
+watch(viewType, () => {
+	ScrollTrigger.killAll()
+})
 </script>
 
 <style scoped lang="scss">
