@@ -1,112 +1,154 @@
 <template>
   <div class="gallery">
 		<div class="info">
-			<div class="texts">
-				<nuxt-link v-for="{name, link}, i in projects" :key="i" :to="link" class="text h6">
-					<CommonLinkTemplate :text="name" />
-				</nuxt-link>
+			<div class="swiper swiper-text">
+				<div class="swiper-wrapper">
+					<div
+						v-for="{name, link}, i in projects"
+						:key="i"
+						class="swiper-slide"
+					>
+						<nuxt-link :to="link" class="text h6">
+							<CommonLinkTemplate :text="name" />
+						</nuxt-link>
+					</div>
+				</div>
 			</div>
-			<div class="details">
-				<div v-for="{year, type}, i in projects" :key="i" class="detail p1">
-					<span>{{ year }}</span>
-					<span>{{ type }}</span>
+
+			<div class="swiper swiper-detail">
+				<div class="swiper-wrapper">
+					<div
+						v-for="{year, type}, i in projects"
+						:key="i"
+						class="swiper-slide"
+					>
+						<div class="detail p1">
+							<span>{{ year }}</span>
+							<span>{{ type }}</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="videos">
-			<nuxt-link v-for="{video, link}, i in projects" :key="i" :to="link" class="item">
-				<video
-					class="video-element inner-video"
-					:src="video"
-					preload="auto"
-					playsinline
-					loop
-					muted
-					autoplay
-				/>
-			</nuxt-link>
+			<div class="swiper swiper-gallery">
+				<div class="swiper-wrapper">
+					<div
+						v-for="{video, link}, i in projects"
+						:key="i"
+						class="swiper-slide"
+					>
+						<nuxt-link :to="link" class="item">
+							<video
+								class="video-element inner-video"
+								:src="video"
+								preload="auto"
+								playsinline
+								loop
+								muted
+								autoplay
+							/>
+						</nuxt-link>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import Swiper from 'swiper';
+import { Mousewheel,Controller, EffectFade } from 'swiper/modules'
 import { projects } from "@/data/projects"
 
-let ctx: gsap.Context
-
 onMounted(() => {
-  initAnim()
+	initSwiper()
+	window.addEventListener("wheel", (e) => e.preventDefault(), { passive: false })
 })
+const initSwiper = () => {
+  const gallerySwiper = new Swiper('.swiper-gallery', {
+    modules: [Mousewheel, Controller],
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    mousewheel: { enabled: true, forceToAxis: true, releaseOnEdges: true, sensitivity: 2.5, thresholdDelta: 5 },
+    speed: 600,
+    watchSlidesProgress: true,
+		allowTouchMove: false
+  });
 
-onBeforeUnmount(() => {
-  ctx?.revert()
-})
+  const textSwiper = new Swiper('.swiper-text', {
+		modules: [Controller],
+		direction: 'vertical',
+		slidesPerView: 3,
+		spaceBetween: 0,
+		speed: 500,
+		watchSlidesProgress: true,
+		centeredSlides: true,
+		allowTouchMove: false
+	})
 
-const initAnim = () => {
-	ctx = gsap.context(() => {
-    const items = gsap.utils.toArray<HTMLElement>(".gallery .item")
-    const texts = gsap.utils.toArray<HTMLElement>(".gallery .text")
+	const detailSwiper = new Swiper('.swiper-detail', {
+		modules: [Controller],
+		direction: 'vertical',
+		slidesPerView: 3,
+		spaceBetween: 0,
+		speed: 500,
+		watchSlidesProgress: true,
+		centeredSlides: true,
+		allowTouchMove: false
+	})
 
-    items.forEach((el) => {
-      const tl = gsap.timeline({
-        defaults: {
-					ease: "none",
-					immediateRender: false
-				},
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      })
-
-      tl.set(el, {
-				transformOrigin: "top right"
-			}, 0)
-
-      tl.fromTo(el, {
-				scale: 0
-			}, {
-				scale: 1,
-				duration: 0.4
-			}, 0)
-
-      tl.set(el, {
-				transformOrigin: "bottom right"
-			}, 0.5)
-
-      tl.to(el, {
-				scale: 0.5,
-				duration: 0.5
-			}, 0.5)
-    })
-  })
-
-}
+	gallerySwiper.controller.control = [textSwiper, detailSwiper]
+};
 </script>
 
 <style scoped lang="scss">
 .gallery {
 	display: grid;
 	grid-template-columns: 1fr 52.25rem;
-	padding: 0 1.5rem 4rem;
+	padding: 0 1.5rem;
 }
-.videos {
+.swiper-gallery {
+  height: 100vh;
 	padding-top: 13.8125rem;
+	padding-bottom: 5rem;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-.item {
-	position: relative;
-	width: 100%;
+.swiper-gallery .swiper-wrapper {
+	transition-timing-function: ease;
+	align-items: flex-end;
+}
+.swiper-gallery .swiper-slide {
 	height: 29.3125rem;
-	width: 100%;
+	width: 52.25rem;
+}
+.swiper-gallery .swiper-slide-prev .item {
+	transform: scale(0.5);
+	transform-origin: bottom right;
+}
+
+.item {
+	display: block;
 	position: relative;
-	transform-origin: top right;
+	width: 100%;
+	height: 100%;
+	position: relative;
+
 	overflow: hidden;
+	transition: transform .5s ease;
+	transform: scale(0.3);
+	transform-origin: top right;
+
 }
 .item video {
 	transition: transform .5s ease;
+}
+.swiper-gallery .swiper-slide-active .item {
+	transform: scale(1);
 }
 @include hover {
 	.item:hover video {
@@ -114,30 +156,58 @@ const initAnim = () => {
 	}
 }
 .info {
-	height: calc(29.3125rem + 13.8125rem);
-	position: sticky;
-	top: 0;
-	left: 0;
-	width: 100%;
-	align-self: start;
-	padding-top: 13.8125rem;
-	display: flex;
-	align-items: center;
+	height: 100vh;
 	display: grid;
-	grid-template-columns: 18.375rem 1fr;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	position: relative;
+	padding-top: 13.8125rem;
+	padding-bottom: 5rem;
+	z-index: 2;
+	pointer-events: none;
 }
-.text {
-	padding: 0.5rem 0;
+
+
+.swiper-text, .swiper-detail {
+	height: 18.75rem;
+	padding-bottom: 6.25rem;
+	padding-top: 6.25rem;
+
+	margin: 0;
 }
-.texts {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+.swiper-text {
 	padding-right: 1rem;
 }
+.swiper-text .swiper-slide .text,
+.swiper-detail .swiper-slide .detail {
+	opacity: 0;
+	transition: opacity .5s ease;
+	pointer-events: none;
+}
+.swiper-text .swiper-slide-active .text,
+.swiper-detail .swiper-slide-active .detail {
+	opacity: 1;
+	pointer-events: auto;
+}
+.swiper-text .swiper-slide-prev .text,
+.swiper-text .swiper-slide-next .text {
+	opacity: 0.3;
+}
+
+.swiper-detail .swiper-slide-prev .detail,
+.swiper-detail .swiper-slide-next .detail {
+	opacity: 0;
+}
+
 .detail {
 	display: grid;
 	grid-template-columns: 2.75rem 1fr;
-	padding: 0.5rem 0;
+	padding-top: .375rem;
+}
+.swiper-detail .swiper-wrapper {
+	align-items: flex-start;
+}
+.swiper-detail .swiper-slide {
+	width: auto;
 }
 </style>

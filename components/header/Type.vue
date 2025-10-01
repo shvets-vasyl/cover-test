@@ -3,7 +3,7 @@
 		<button
 			class="type-btn"
 			:class="{ active: viewType === 'gallery' }"
-			@click="viewType = 'gallery'"
+			@click="initClick('gallery')"
 		>
 			<CommonLinkTemplate text="Gallery" />
 		</button>
@@ -11,7 +11,7 @@
 		<button
 			class="type-btn"
 			:class="{ active: viewType === 'list' }"
-			@click="viewType = 'list'"
+			@click="initClick('list')"
 		>
 			<CommonLinkTemplate text="List" />
 		</button>
@@ -21,6 +21,29 @@
 <script setup lang="ts">
 type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type')
+const animate = ref(false)
+
+const initClick = (view: view) => {
+	if(viewType.value === view || animate.value) return
+
+	animate.value = true
+
+	const tl = gsap.timeline({
+		onComplete() {
+			animate.value = false
+		}
+	})
+	tl.to(".main-wrap", {
+		opacity: 0,
+	})
+	tl.add(() => {
+		useScrollTo(0, { immediate: true })
+		viewType.value = view
+	})
+	tl.to(".main-wrap", {
+		opacity: 1,
+	})
+}
 
 watch(viewType, () => {
 	ScrollTrigger.killAll()

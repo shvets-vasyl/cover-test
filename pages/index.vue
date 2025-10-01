@@ -2,16 +2,19 @@
   <main class="main-page" :class="{list: viewType === 'list'}">
 		<CommonBlur />
 
-
     <HeaderMain />
-		<MainList v-if="viewType === 'list'" />
-		<MainGallery v-if="viewType === 'gallery'" />
+
+		<div class="main-wrap">
+			<MainList v-if="viewType === 'list'" />
+			<MainGallery v-if="viewType === 'gallery'" />
+		</div>
+
 		<TheFooter />
   </main>
 </template>
 <script setup lang="ts">
 type view = 'gallery' | 'list'
-const viewType = useState<view>('view-type')
+const viewType = useState<view>('view-type');
 
 onMounted(() => {
 	gsap.to(".main-page", {

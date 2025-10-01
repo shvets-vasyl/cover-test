@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  css: ["@/assets/styles/main.scss"],
+  css: ["@/assets/styles/main.scss", "swiper/css"],
 
   vite: {
     css: {
