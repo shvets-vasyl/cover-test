@@ -65,6 +65,20 @@ onMounted(() => {
 	initSwiper()
 	window.addEventListener("wheel", (e) => e.preventDefault(), { passive: false })
 })
+
+function updateClasses(swiper: Swiper) {
+  swiper.slides.forEach((slide, i) => {
+    slide.classList.remove('is-prev', 'is-next', 'is-active')
+    if (i < swiper.activeIndex) {
+      slide.classList.add('is-prev')
+    } else if (i > swiper.activeIndex) {
+      slide.classList.add('is-next')
+    } else {
+      slide.classList.add('is-active')
+    }
+  })
+}
+
 const initSwiper = () => {
   const gallerySwiper = new Swiper('.swiper-gallery', {
     modules: [Mousewheel, Controller],
@@ -74,7 +88,15 @@ const initSwiper = () => {
     mousewheel: { enabled: true, forceToAxis: true, releaseOnEdges: true, sensitivity: 2.5, thresholdDelta: 5 },
     speed: 600,
     watchSlidesProgress: true,
-		allowTouchMove: false
+		allowTouchMove: false,
+		on: {
+			init(swiper) {
+				updateClasses(swiper)
+			},
+			slideChange(swiper) {
+				updateClasses(swiper)
+			}
+		}
   });
 
   const textSwiper = new Swiper('.swiper-text', {
@@ -126,7 +148,7 @@ const initSwiper = () => {
 	height: 29.3125rem;
 	width: 52.25rem;
 }
-.swiper-gallery .swiper-slide-prev .item {
+.swiper-gallery .swiper-slide.is-prev .item {
 	transform: scale(0.5);
 	transform-origin: bottom right;
 }
@@ -142,7 +164,6 @@ const initSwiper = () => {
 	transition: transform .5s ease;
 	transform: scale(0.3);
 	transform-origin: top right;
-
 }
 .item video {
 	transition: transform .5s ease;
