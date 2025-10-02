@@ -94,6 +94,16 @@ const initSwiper = () => {
 				updateClasses(swiper)
 			},
 			slideChange(swiper) {
+				const activeSlide = document.querySelector(".swiper-gallery .swiper-slide-active .item")
+				const prev = swiper.previousIndex
+				const current = swiper.activeIndex
+
+				if (current > prev) {
+					activeSlide?.classList.add("trOgBot")
+				} else if (current < prev) {
+					activeSlide?.classList.remove("trOgBot")
+				}
+
 				updateClasses(swiper)
 			}
 		}
@@ -167,6 +177,9 @@ const initSwiper = () => {
 }
 .item video {
 	transition: transform .5s ease;
+}
+.swiper-gallery .swiper-slide-active .item.trOgBot {
+	transform-origin: bottom right;
 }
 .swiper-gallery .swiper-slide-active .item {
 	transform: scale(1);
