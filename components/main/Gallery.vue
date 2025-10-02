@@ -58,7 +58,7 @@
 
 <script setup lang="ts">
 import Swiper from 'swiper';
-import { Mousewheel,Controller, EffectFade } from 'swiper/modules'
+import { Mousewheel,Controller } from 'swiper/modules'
 import { projects } from "@/data/projects"
 
 onMounted(() => {

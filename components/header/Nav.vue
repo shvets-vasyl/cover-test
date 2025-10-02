@@ -1,6 +1,6 @@
 <template>
 	<ul class="nav">
-		<li v-for="({href, label}, index) in nav" :key="index" class="p1">
+		<li v-for="({href, label}, index) in nav" :key="index" class="item p1">
 			<nuxt-link :to="href">
 				<CommonLinkTemplate :text="label" />
 			</nuxt-link>
@@ -28,5 +28,22 @@ const nav = [
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
+}
+.item {
+	position: relative;
+}
+.item:after {
+	content: "";
+	position: absolute;
+	top: .4375rem;
+	left: -0.625rem;
+	width: .25rem;
+	height: .25rem;
+	border-radius: 100%;
+	background: var(--c-accent);
+	opacity: 0;
+}
+.item:has(.router-link-active):after {
+	opacity: 1;
 }
 </style>

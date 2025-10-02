@@ -10,7 +10,8 @@ export const projects = [
       "/images/project1/3.png",
       "/images/project1/4.png",
     ],
-    link: "/neo-terraform-chronicles",
+    link: "/neo-terraform-chronicles1",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2021",
@@ -23,7 +24,8 @@ export const projects = [
       "/images/project2/3.png",
       "/images/project2/4.png",
     ],
-    link: "/coperni-glass",
+    link: "/coperni-glass2",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2022",
@@ -36,7 +38,8 @@ export const projects = [
       "/images/project3/3.png",
       "/images/project3/4.png",
     ],
-    link: "/g-beauty",
+    link: "/g-beauty3",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2023",
@@ -49,7 +52,8 @@ export const projects = [
       "/images/project4/3.png",
       "/images/project4/4.png",
     ],
-    link: "/neo-terraform-chronicles",
+    link: "/neo-terraform-chronicles4",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
 	{
 		year: "2024",
@@ -62,7 +66,8 @@ export const projects = [
       "/images/project1/3.png",
       "/images/project1/4.png",
     ],
-    link: "/neo-terraform-chronicles",
+    link: "/neo-terraform-chronicles5",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2025",
@@ -75,7 +80,8 @@ export const projects = [
       "/images/project2/3.png",
       "/images/project2/4.png",
     ],
-    link: "/coperni-glass",
+    link: "/coperni-glass6",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2020",
@@ -88,7 +94,8 @@ export const projects = [
       "/images/project3/3.png",
       "/images/project3/4.png",
     ],
-    link: "/g-beauty",
+    link: "/g-beauty7",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
   {
 		year: "2022",
@@ -101,6 +108,7 @@ export const projects = [
       "/images/project4/3.png",
       "/images/project4/4.png",
     ],
-    link: "/neo-terraform-chronicles",
+    link: "/neo-terraform-chronicles8",
+		descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
   },
 ];
