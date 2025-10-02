@@ -38,10 +38,17 @@ html[data-theme="light"] {
   --c-accent: #191919;
   --c-dark: #ffffff;
 }
+html[data-theme="light"] .about-page {
+  --c-accent: #ffffff;
+	--c-dark: #191919;
+}
+
 
 // z index
 
 :root {
   --z-header: 1000;
   --z-footer: 1000;
+	--z-fullscreen: 5000;
+	--z-loader: 6000;
 }

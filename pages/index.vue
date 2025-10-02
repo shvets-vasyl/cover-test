@@ -13,19 +13,19 @@
   </main>
 </template>
 <script setup lang="ts">
+definePageMeta({
+  pageTransition: {
+    name: "page",
+    mode: "out-in",
+  },
+})
+
 type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type');
-
-onMounted(() => {
-	gsap.to(".main-page", {
-		opacity: 1,
-	})
-})
 </script>
 <style scoped lang="scss">
 .main-page {
 	position: relative;
-	opacity: 0;
 }
 .main-page:deep(.blur) {
 	position: fixed;

@@ -6,15 +6,15 @@
   </main>
 </template>
 <script setup lang="ts">
-onMounted(() => {
-	gsap.to(".marketing-page", {
-		opacity: 1,
-	})
+definePageMeta({
+  pageTransition: {
+    name: "page",
+    mode: "out-in",
+  },
 })
 </script>
 <style scoped lang="scss">
 .marketing-page {
 	position: relative;
-	opacity: 0;
 }
 </style>

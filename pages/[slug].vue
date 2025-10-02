@@ -28,14 +28,15 @@
 import { ProjectVideo } from "#components"
 import { projects } from "@/data/projects"
 
+definePageMeta({
+  pageTransition: {
+    name: "page",
+    mode: "out-in",
+  },
+})
+
 const route = useRoute()
 const project = projects.filter(el => el.link === route.fullPath)[0]
-
-onMounted(() => {
-	gsap.to(".project-page", {
-		opacity: 1,
-	})
-})
 </script>
 <style scoped lang='scss'>
 .project-page {
@@ -43,7 +44,6 @@ onMounted(() => {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	opacity: 0;
 }
 .wrap {
 	padding: 7.5rem 0 1rem 1.5rem;

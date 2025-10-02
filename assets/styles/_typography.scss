@@ -1,7 +1,11 @@
 @use "./utils" as *;
 
 
-
+.h1 {
+	font-size: 4.625rem;
+	line-height: 120%;
+	letter-spacing: -0.07em;
+}
 .h6 {
 	font-size: 1.25rem;
 	line-height: 120%;
