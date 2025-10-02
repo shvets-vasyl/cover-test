@@ -4,7 +4,9 @@
 
 		<div class="wrap">
 			<div class="video-wrap">
-				<ProjectVideo :src="project.video" />
+				<ClientOnly>
+					<ProjectVideo :src="project.video" />
+				</ClientOnly>
 			</div>
 			<div class="content-wrap">
 				<div class="top">
@@ -47,6 +49,8 @@ onMounted(() => {
 	padding: 7.5rem 0 1rem 1.5rem;
 	display: grid;
 	grid-template-columns: 1fr 23.5rem;
+	width: 100%;
+	height: 100%;
 }
 .content-wrap {
 	height: 100%;
@@ -55,6 +59,7 @@ onMounted(() => {
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
+	padding: 0 1.5rem 5.125rem;
 }
 .name, .about {
 	margin-bottom: .5rem;

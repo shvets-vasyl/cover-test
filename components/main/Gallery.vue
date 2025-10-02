@@ -155,7 +155,7 @@ const initSwiper = () => {
 	align-items: flex-end;
 }
 .swiper-gallery .swiper-slide {
-	height: 29.3125rem;
+	height: 100%;
 	width: 52.25rem;
 }
 .swiper-gallery .swiper-slide.is-prev .item {
@@ -206,6 +206,7 @@ const initSwiper = () => {
 	height: 18.75rem;
 	padding-bottom: 6.25rem;
 	padding-top: 6.25rem;
+	max-height: 100%;
 
 	margin: 0;
 }
