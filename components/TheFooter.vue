@@ -2,7 +2,7 @@
 	<footer class="footer">
 		<div class="copy">
 			<IconsCopy />
-			<p class="p1">{{ new Date().getFullYear() }} Dogadoga <br />Inc. All Rights Reserved.</p>
+			<p class="p1">{{ new Date().getFullYear() }} DOGADOGA<br />All Rights Reserved</p>
 		</div>
 
 		<div class="docs">

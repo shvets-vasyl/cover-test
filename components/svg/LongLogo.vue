@@ -35,5 +35,8 @@
 <style scoped lang="scss">
 path {
 	fill: var(--c-accent);
+	@include mobile {
+		transition: fill .6s ease;
+	}
 }
 </style>

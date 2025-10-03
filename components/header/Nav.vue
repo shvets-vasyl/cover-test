@@ -28,10 +28,17 @@ const nav = [
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
-	color: var(--c-accent);
+	@include mobile {
+		flex-direction: column;
+		gap: 1rem;
+		padding-top: 13.875rem;
+	}
 }
 .item {
 	position: relative;
+	@include mobile {
+		font-size: 1.25rem;
+	}
 }
 .item:after {
 	content: "";
@@ -43,6 +50,12 @@ const nav = [
 	border-radius: 100%;
 	background: var(--c-accent);
 	opacity: 0;
+	@include mobile {
+		top: .625rem;
+		width: .5rem;
+		height: .5rem;
+		left: -.75rem;
+	}
 }
 .item:has(.router-link-active):after {
 	opacity: 1;

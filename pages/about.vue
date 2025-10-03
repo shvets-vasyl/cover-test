@@ -2,6 +2,7 @@
   <main class="about-page">
     <CommonBlur />
     <HeaderBasic />
+		<HeaderMenu />
 
     <img class="about-bg" src="/images/about.png" alt="" />
 

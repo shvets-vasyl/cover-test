@@ -53,9 +53,8 @@ a {
 	}
 }
 .mob {
-	display: none;
-	@include mobile {
-		display: block;
+	@include desktop {
+		display: none;
 	}
 }
 input:-webkit-autofill,

@@ -23,7 +23,7 @@
       />
       <button
         class="play-overlay"
-        :style="overlayStyle"
+        :style="isDesktop && overlayStyle"
         :class="{ visible: showOverlay }"
       >
         <IconsPlay v-if="!isPlaying" />
@@ -71,6 +71,8 @@
 <script setup lang="ts">
 const props = defineProps<{ src: string }>();
 
+const { isDesktop } = useViewport()
+
 // vars
 const videoEl = ref<HTMLVideoElement | null>(null);
 const isPlaying = ref(false);
@@ -97,9 +99,11 @@ onMounted(async () => {
   );
   duration.value = v.duration;
 
-  try {
-    await generateThumbnails(props.src, times.value, thumbs.value);
-  } catch {}
+	if (isDesktop.value) {
+		try {
+			await generateThumbnails(props.src, times.value, thumbs.value);
+		} catch {}
+	}
 
   v.addEventListener("play", () => (isPlaying.value = true));
   v.addEventListener("pause", () => (isPlaying.value = false));
@@ -249,6 +253,9 @@ async function generateThumbnails(
   gap: 2.875rem;
   height: 100%;
   flex-direction: column;
+	@include mobile {
+		height: 12rem;
+	}
 }
 .video-wrap.fullscreen {
   position: fixed;
@@ -285,6 +292,15 @@ async function generateThumbnails(
     transform 0.1s ease;
   top: -6.5rem;
   left: -1.5rem;
+
+	@include mobile {
+		opacity: 1;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 2.125rem;
+  	height: 2.125rem;
+	}
 }
 .video-wrap.fullscreen .play-overlay {
   top: 0.75rem;
@@ -300,6 +316,9 @@ async function generateThumbnails(
   grid-template-columns: repeat(16, 1fr);
   gap: 0.25rem;
   overflow-x: auto;
+	@include mobile {
+		display: none;
+	}
 }
 .video-wrap.fullscreen .thumbs {
   display: none;
@@ -326,6 +345,12 @@ async function generateThumbnails(
   mix-blend-mode: difference;
   opacity: 0;
   transition: opacity 0.3s ease;
+	@include mobile {
+		opacity: 1;
+		top: auto;
+		bottom: 0;
+		padding: 0 .5rem .5rem;
+	}
 }
 .video-controls.visible {
   opacity: 1;
@@ -343,14 +368,23 @@ async function generateThumbnails(
   left: 0;
   transform: translateY(-50%);
   background: white;
+	@include mobile {
+		height: .1875rem;
+	}
 }
 .video-info {
   color: white;
   display: flex;
   padding-top: 1rem;
+	@include mobile {
+		padding-top: 0.5rem;
+	}
 }
 .fullscreen {
   margin-right: 1.5rem;
+	@include mobile {
+		margin-right: 6.6rem;
+	}
 }
 .info-right {
   display: flex;

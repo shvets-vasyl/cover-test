@@ -3,6 +3,7 @@
 		<CommonBlur />
 
     <HeaderMain />
+		<HeaderMenu />
 
 		<div class="main-wrap">
 			<MainList v-if="viewType === 'list'" />

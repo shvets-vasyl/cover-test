@@ -1,19 +1,22 @@
 <template>
-	<div class="theme-switcher">
-		<button
-			class="theme-btn"
-			:class="{ active: theme === 'dark' }"
-			@click="setTheme('dark')"
-		>
-			<span />
-		</button>
-		<button
-			class="theme-btn"
-			:class="{ active: theme === 'light' }"
-			@click="setTheme('light')"
-		>
-			<span />
-		</button>
+	<div class="theme-switcher-wrap">
+		<div class="theme-switcher">
+			<button
+				class="theme-btn"
+				:class="{ active: theme === 'dark' }"
+				@click="setTheme('dark')"
+			>
+				<span />
+			</button>
+			<button
+				class="theme-btn"
+				:class="{ active: theme === 'light' }"
+				@click="setTheme('light')"
+			>
+				<span />
+			</button>
+		</div>
+		<p class="theme-text p1">Dark/Light mode</p>
 	</div>
 </template>
 
@@ -37,11 +40,17 @@ onMounted(() => {
 .theme-switcher {
   display: flex;
   gap: .3125rem;
+	@include mobile {
+		gap: .75rem;
+		justify-content: center;
+		margin-top: 3.125rem;
+	}
 }
 .theme-btn {
 	position: relative;
 	display: flex;
 	transition: transform .5s ease;
+
 }
 .theme-btn span {
 	width: .6875rem;
@@ -50,6 +59,11 @@ onMounted(() => {
   opacity: 0.3;
   background: var(--c-accent);
 	transition: transform .5s ease;
+
+	@include mobile {
+		width: 1.1875rem;
+		height: 1.1875rem;
+	}
 }
 .theme-btn:after {
 	position: absolute;
@@ -65,6 +79,9 @@ onMounted(() => {
 	pointer-events: none;
 	opacity: 0;
 
+	@include mobile {
+		display: none;
+	}
 }
 .theme-btn:nth-child(1):after {
 	content: "Switch to dark theme"
@@ -81,6 +98,15 @@ onMounted(() => {
 	}
 	.theme-btn:hover:after {
 		opacity: 1;
+	}
+}
+.theme-text {
+	display: none;
+	@include mobile {
+		display: block;
+		text-align: center;
+		margin-top: 1rem;
+		color: var(--c-accent);
 	}
 }
 </style>

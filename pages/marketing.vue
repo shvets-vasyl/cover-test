@@ -3,6 +3,7 @@
 		<CommonBlur />
 
     <HeaderBasic />
+		<HeaderMenu />
   </main>
 </template>
 <script setup lang="ts">

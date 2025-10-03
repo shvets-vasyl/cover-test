@@ -1,6 +1,11 @@
 import type { TransitionProps } from "vue"
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
+	if (import.meta.client) {
+    const { close } = useToggleMenu()
+    close()
+  }
+
   const transitionDone = useState("transition-done")
   const duration = 0.6
 
