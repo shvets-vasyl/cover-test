@@ -86,7 +86,7 @@
           </button>
         </div>
         <div class="col">
-          <a href="https://www.instagram.com/swfx_real/" class="mail p1" target="_blank">
+          <a href="https://www.instagram.com/dogadoga.agency/" class="mail p1" target="_blank">
             <CommonLinkTemplate text="Instagram" />
           </a>
         </div>
