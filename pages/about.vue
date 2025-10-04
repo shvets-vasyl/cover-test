@@ -134,7 +134,7 @@ const scrollToggle = () => {
 }
 .content {
   text-align: center;
-  padding-top: 100vh;
+  padding-top: 100dvh;
   position: relative;
   z-index: 2;
   margin-top: -7rem;
