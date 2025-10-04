@@ -12,9 +12,15 @@
 
 		<div class="main-wrap">
 			<MainList v-if="viewType === 'list'" />
+			<MainListMob v-if="viewType === 'list'" />
 			<MainGallery v-if="viewType === 'gallery'" />
+			<MainGalleryMob v-if="viewType === 'gallery'" />
 		</div>
 
+		<div class="mob-type">
+			<CommonBlur class="footer-blur" />
+			<HeaderType />
+		</div>
 		<TheFooter />
   </main>
 </template>
@@ -32,14 +38,12 @@ const viewType = useState<view>('view-type');
 <style scoped lang="scss">
 .main-page {
 	position: relative;
+	@include mobile {
+		min-height: 100dvh;
+	}
 }
 .main-page:deep(.blur) {
 	position: fixed;
-}
-.main-wrap {
-	@include mobile {
-		display: none;
-	}
 }
 .main-header {
 	@include mobile {
@@ -51,5 +55,22 @@ const viewType = useState<view>('view-type');
 	@include mobile {
 		display: block;
 	}
+}
+.mob-type {
+	display: none;
+	@include mobile {
+		display: flex;
+		justify-content: center;
+		position: fixed;
+		bottom: 1rem;
+		width: 100%;
+		left: 0;
+		z-index: var(--z-footer);
+	}
+}
+.footer-blur {
+	top: auto;
+	bottom: 0;
+	transform: rotate(180deg) translateY(-50%);
 }
 </style>

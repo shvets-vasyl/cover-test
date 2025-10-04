@@ -55,6 +55,12 @@ watch(viewType, () => {
   display: flex;
   gap: .5rem;
 	align-items: center;
+	@include mobile {
+		font-size: 1.25rem;
+		gap: 1rem;
+		position: relative;
+		z-index: 101;
+	}
 }
 .type-btn {
 	opacity: 0.3;

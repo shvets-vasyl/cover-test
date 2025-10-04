@@ -61,7 +61,11 @@ import Swiper from 'swiper';
 import { Mousewheel,Controller } from 'swiper/modules'
 import { projects } from "@/data/projects"
 
+const { isMobile } = useViewport()
+
 onMounted(() => {
+	if (isMobile.value) return
+
 	initSwiper()
 	window.addEventListener("wheel", (e) => e.preventDefault(), { passive: false })
 })
@@ -140,6 +144,10 @@ const initSwiper = () => {
 	display: grid;
 	grid-template-columns: 1fr 52.25rem;
 	padding: 0 1.5rem;
+
+	@include mobile {
+		display: none;
+	}
 }
 .swiper-gallery {
   height: 100vh;

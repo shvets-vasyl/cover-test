@@ -64,6 +64,9 @@ const onLeave = () => {
   position: relative;
   margin-top: 18.75rem;
   padding-bottom: 2rem;
+	@include mobile {
+		display: none;
+	}
 }
 
 .item {
