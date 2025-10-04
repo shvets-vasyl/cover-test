@@ -274,6 +274,15 @@ async function generateThumbnails(
 .video-element {
   cursor: pointer;
 }
+.video-wrap.fullscreen .video-element {
+	@include mobile {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(90deg);
+		width: 100vh;
+		height: 100vw;
+	}
+}
 
 .play-overlay {
   position: absolute;
@@ -398,6 +407,10 @@ async function generateThumbnails(
   top: 1rem;
   left: 1.5rem;
   z-index: 3;
+
+	@include mobile {
+		display: none;
+	}
 }
 .logo:deep(path) {
   fill: white;
