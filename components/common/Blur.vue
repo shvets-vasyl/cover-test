@@ -27,6 +27,10 @@
 	pointer-events: none;
   contain: paint;
   transform: translateZ(0);
+
+	@include mobile {
+		transform: translateY(-50%) translateZ(0);
+	}
 }
 
 .layer {

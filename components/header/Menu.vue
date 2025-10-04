@@ -53,6 +53,7 @@ const openMenuState = useState<boolean>("open-menu")
 	position: absolute;
 	inset: 0;
 	opacity: 0;
+	backdrop-filter: blur(5px);
 }
 .bg {
 	background: var(--c-dark);

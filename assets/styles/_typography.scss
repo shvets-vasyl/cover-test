@@ -5,6 +5,11 @@
 	font-size: 4.625rem;
 	line-height: 120%;
 	letter-spacing: -0.07em;
+
+	@include mobile {
+		font-size: 3.75rem;
+		line-height: 90%;
+	}
 }
 .h6 {
 	font-size: 1.25rem;

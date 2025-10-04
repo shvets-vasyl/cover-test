@@ -139,13 +139,25 @@ const scrollToggle = () => {
   z-index: 2;
   margin-top: -7rem;
   color: var(--c-accent);
+	@include mobile {
+		margin-top: -10rem;
+	}
 }
 .title {
   display: flex;
   justify-content: center;
+	@include mobile {
+		position: relative;
+	}
 }
 .title-r {
   margin-top: -1.5rem;
+	@include mobile {
+		margin-top: 0;
+		position: absolute;
+		right: 2.1rem;
+		top: 3.5rem;
+	}
 }
 .scroll-down {
   position: fixed;
@@ -153,16 +165,30 @@ const scrollToggle = () => {
   right: 1.5rem;
   z-index: 2;
   color: var(--c-accent);
+	@include mobile {
+		display: none;
+	}
 }
 .about,
 .services {
   margin: 4.625rem auto 0;
   width: 24.1875rem;
+	@include mobile {
+		width: 100%;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 }
 .mission,
 .vision {
   width: 24.1875rem;
   flex: 0 0 24.1875rem;
+	@include mobile {
+		width: 100%;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-top: 4.625rem;
+	}
 }
 .about-title,
 .mission-title,
@@ -176,10 +202,17 @@ const scrollToggle = () => {
   justify-content: center;
   position: relative;
   margin-top: 4.625rem;
+	@include mobile {
+		display: block;
+		margin-top: 0;
+	}
 }
 .info-title {
   position: absolute;
   top: 0;
+	@include mobile {
+		display: none;
+	}
 }
 .info-title-1 {
   left: 1.5rem;
@@ -189,6 +222,9 @@ const scrollToggle = () => {
 }
 .get-in-touch {
   margin-top: 8.625rem;
+	@include mobile {
+		margin-top: 4.625rem;
+	}
 }
 .get-in-touch-link {
   position: relative;
@@ -209,14 +245,28 @@ const scrollToggle = () => {
   grid-template-columns: 1fr 1fr 1fr;
 	margin-top: 8.625rem;
 	padding: 0 1.5rem 1rem;
+	@include mobile {
+		padding: 0 1rem 1rem;
+		display: flex;
+		flex-direction: column;
+		margin-top: 4.625rem;
+		align-items: center;
+		gap: .5rem;
+	}
 }
 .col {
   display: flex;
 }
 .col:nth-child(2) {
   justify-content: center;
+	@include mobile {
+		display: none;
+	}
 }
 .col:nth-child(3) {
   justify-content: flex-end;
+	@include mobile {
+		justify-content: center;
+	}
 }
 </style>

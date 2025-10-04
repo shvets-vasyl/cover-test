@@ -26,6 +26,7 @@ const openMenuState = useState<boolean>("open-menu")
 	background: var(--c-accent);
 	transform-origin: center center;
 	transition: all .6s var(--default-ease);
+	will-change: transform;
 }
 .burger-wrap span:nth-child(1) {
 	transform: translate(-50%, calc(-50% - .1875rem));

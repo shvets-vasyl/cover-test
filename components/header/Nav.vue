@@ -36,6 +36,7 @@ const nav = [
 }
 .item {
 	position: relative;
+	color: var(--c-accent);
 	@include mobile {
 		font-size: 1.25rem;
 	}
