@@ -5,7 +5,7 @@
 		</div>
 		<div class="content">
 			<HeaderNav />
-			<HeaderType />
+			<HeaderType class="header-type" />
 			<HeaderTheme />
 		</div>
 	</header>
@@ -30,4 +30,5 @@
 	margin-left: auto;
 	margin-right: 21.6rem;
 }
+
 </style>

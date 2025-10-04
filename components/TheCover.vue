@@ -40,11 +40,11 @@
 
 		<ClientOnly>
 			<div class="video-left">
-				<CommonVideo src="/video/showreel.webm" />
+				<CommonVideo src="/video/showreel.mp4" />
 			</div>
 
 			<div class="video-right">
-				<CommonVideo src="/video/ai-showreel.webm" />
+				<CommonVideo src="/video/ai-showreel.mp4" />
 			</div>
 		</ClientOnly>
   </main>

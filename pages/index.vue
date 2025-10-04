@@ -2,7 +2,12 @@
   <main class="main-page" :class="{list: viewType === 'list'}">
 		<CommonBlur />
 
-    <HeaderMain />
+		<div class="main-header">
+    	<HeaderMain />
+		</div>
+		<div class="main-header-mob">
+			<HeaderBasic />
+		</div>
 		<HeaderMenu />
 
 		<div class="main-wrap">
@@ -30,5 +35,21 @@ const viewType = useState<view>('view-type');
 }
 .main-page:deep(.blur) {
 	position: fixed;
+}
+.main-wrap {
+	@include mobile {
+		display: none;
+	}
+}
+.main-header {
+	@include mobile {
+		display: none;
+	}
+}
+.main-header-mob {
+	display: none;
+	@include mobile {
+		display: block;
+	}
 }
 </style>

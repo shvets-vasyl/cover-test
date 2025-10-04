@@ -3,7 +3,7 @@ export const projects = [
 		year: "2020",
     name: "Neo-Terraform chronicles",
     type: "Music Video",
-		video: "/video/1.webm",
+		video: "/video/1.mp4",
     photosList: [
       "/images/project1/1.png",
       "/images/project1/2.png",
@@ -17,7 +17,7 @@ export const projects = [
 		year: "2021",
     name: "Coperni Glass",
     type: "Mixed Media",
-		video: "/video/2.webm",
+		video: "/video/2.mp4",
     photosList: [
       "/images/project2/1.png",
       "/images/project2/2.png",
@@ -31,7 +31,7 @@ export const projects = [
 		year: "2022",
     name: "G Beauty",
     type: "Music Video",
-		video: "/video/3.webm",
+		video: "/video/3.mp4",
     photosList: [
       "/images/project3/1.png",
       "/images/project3/2.png",
@@ -45,7 +45,7 @@ export const projects = [
 		year: "2023",
     name: "Neo-Terraform chronicles",
     type: "Music Video",
-		video: "/video/4.webm",
+		video: "/video/4.mp4",
     photosList: [
       "/images/project4/1.png",
       "/images/project4/2.png",
@@ -59,7 +59,7 @@ export const projects = [
 		year: "2024",
     name: "Neo-Terraform chronicles",
     type: "Music Video",
-		video: "/video/5.webm",
+		video: "/video/5.mp4",
     photosList: [
       "/images/project1/1.png",
       "/images/project1/2.png",

@@ -35,6 +35,9 @@ const docs = [
 	justify-content: space-between;
 	align-items: flex-end;
 	z-index: var(--z-footer);
+	@include mobile {
+		display: none;
+	}
 }
 .copy {
 	display: flex;

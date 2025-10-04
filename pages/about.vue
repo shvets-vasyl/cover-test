@@ -6,7 +6,7 @@
 
 		<video
 			class="about-bg"
-			src="/video/about.webm"
+			src="/video/about.mp4"
 			preload="auto"
 			playsinline
 			loop
