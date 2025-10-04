@@ -168,9 +168,9 @@ const initSwiper = () => {
 	width: auto;
 	margin: 0;
 	pointer-events: none;
-	mix-blend-mode: difference;
-	color: var(--c-dark);
+	color: var(--c-accent);
 	width: 100%;
+	z-index: 2;
 }
 .gallery-mob .swiper-slide {
 	display: flex;
