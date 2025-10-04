@@ -4,7 +4,15 @@
     <HeaderBasic />
 		<HeaderMenu />
 
-    <img class="about-bg" src="/images/about.png" alt="" />
+		<video
+			class="about-bg"
+			src="/video/about.webm"
+			preload="auto"
+			playsinline
+			loop
+			muted
+			autoplay
+		/>
 
     <p class="scroll-down p1">Scroll Down</p>
 
