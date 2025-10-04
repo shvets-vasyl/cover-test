@@ -35,9 +35,7 @@
         <div class="progress">
           <div
             class="progress-line"
-						:style="isDesktop || !fullscreen
-							? { width: progressPercent + '%' }
-							: { height: progressPercent + '%' }"
+						:style="{ width: progressPercent + '%' }"
           />
         </div>
         <div class="video-info p1">
@@ -277,15 +275,6 @@ async function generateThumbnails(
 .video-element {
   cursor: pointer;
 }
-.video-wrap.fullscreen .video-element {
-	@include mobile {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) rotate(90deg);
-		width: 100vh;
-		height: 100vw;
-	}
-}
 
 .play-overlay {
   position: absolute;
@@ -325,9 +314,12 @@ async function generateThumbnails(
   opacity: 1;
 }
 .video-wrap.fullscreen .play-overlay {
-	top: 1rem;
-	left: 1rem;
-	transform: rotate(90deg);
+	@include mobile {
+		top: auto;
+		bottom: 1rem;
+		left: 1rem;
+		transform: none;
+	}
 }
 .thumbs {
   display: grid;
@@ -375,27 +367,17 @@ async function generateThumbnails(
 }
 .fullscreen .video-controls {
 	@include mobile {
-		top: 0;
+		top: auto;
+		bottom: 0;
 		left: 0;
-		padding: 4.125rem 0 1rem 1rem;
-		width: auto;
-		height: 100%;
-		display: flex;
+		padding: 0 1rem  1rem 4.125rem;
 	}
-
 }
 .progress {
   width: 100%;
   position: relative;
   height: 1px;
   background: rgba(white, 0.4);
-}
-.fullscreen .progress {
-	@include mobile {
-		width: 1px;
-		height: 100%;
-		order: 2;
-	}
 }
 .progress-line {
   position: absolute;
@@ -408,15 +390,7 @@ async function generateThumbnails(
 		height: .1875rem;
 	}
 }
-.fullscreen .progress-line {
-	@include mobile {
-		height: 100%;
-		top: 0;
-		left: 50%;
-		width: .1875rem;
-		transform: translateX(-50%);
-	}
-}
+
 .video-info {
   color: white;
   display: flex;
@@ -425,15 +399,7 @@ async function generateThumbnails(
 		padding-top: 0.5rem;
 	}
 }
-.fullscreen .video-info {
-	@include mobile {
-		padding-top: 0;
-		padding-right: 0.5rem;
-		display: flex;
-		justify-content: space-between;
-		writing-mode: vertical-rl;
-	}
-}
+
 .fullscreen {
   margin-right: 1.5rem;
 	@include mobile {
@@ -471,9 +437,7 @@ async function generateThumbnails(
   mix-blend-mode: difference;
   z-index: 3;
 	@include mobile {
-		writing-mode: vertical-rl;
-		top: auto;
-		bottom: 1rem;
+		top: 1rem;
 		right: 1rem;
 	}
 }
