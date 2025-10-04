@@ -25,6 +25,7 @@
         class="play-overlay"
         :style="isDesktop && overlayStyle"
         :class="{ visible: showOverlay }"
+				@click="toggle"
       >
         <IconsPlay v-if="!isPlaying" />
         <IconsPause v-else />
@@ -34,7 +35,9 @@
         <div class="progress">
           <div
             class="progress-line"
-            :style="{ width: progressPercent + '%' }"
+						:style="isDesktop || !fullscreen
+							? { width: progressPercent + '%' }
+							: { height: progressPercent + '%' }"
           />
         </div>
         <div class="video-info p1">
@@ -309,6 +312,8 @@ async function generateThumbnails(
 		transform: translate(-50%, -50%);
 		width: 2.125rem;
   	height: 2.125rem;
+		pointer-events: auto;
+		z-index: 2;
 	}
 }
 .video-wrap.fullscreen .play-overlay {
@@ -319,7 +324,11 @@ async function generateThumbnails(
 .play-overlay.visible {
   opacity: 1;
 }
-
+.video-wrap.fullscreen .play-overlay {
+	top: 1rem;
+	left: 1rem;
+	transform: rotate(90deg);
+}
 .thumbs {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -364,11 +373,29 @@ async function generateThumbnails(
 .video-controls.visible {
   opacity: 1;
 }
+.fullscreen .video-controls {
+	@include mobile {
+		top: 0;
+		left: 0;
+		padding: 4.125rem 0 1rem 1rem;
+		width: auto;
+		height: 100%;
+		display: flex;
+	}
+
+}
 .progress {
   width: 100%;
   position: relative;
   height: 1px;
   background: rgba(white, 0.4);
+}
+.fullscreen .progress {
+	@include mobile {
+		width: 1px;
+		height: 100%;
+		order: 2;
+	}
 }
 .progress-line {
   position: absolute;
@@ -381,12 +408,30 @@ async function generateThumbnails(
 		height: .1875rem;
 	}
 }
+.fullscreen .progress-line {
+	@include mobile {
+		height: 100%;
+		top: 0;
+		left: 50%;
+		width: .1875rem;
+		transform: translateX(-50%);
+	}
+}
 .video-info {
   color: white;
   display: flex;
   padding-top: 1rem;
 	@include mobile {
 		padding-top: 0.5rem;
+	}
+}
+.fullscreen .video-info {
+	@include mobile {
+		padding-top: 0;
+		padding-right: 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		writing-mode: vertical-rl;
 	}
 }
 .fullscreen {
@@ -425,6 +470,12 @@ async function generateThumbnails(
   color: white;
   mix-blend-mode: difference;
   z-index: 3;
+	@include mobile {
+		writing-mode: vertical-rl;
+		top: auto;
+		bottom: 1rem;
+		right: 1rem;
+	}
 }
 .close:deep(svg) {
   width: 1.125rem;
