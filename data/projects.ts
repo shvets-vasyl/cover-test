@@ -43,7 +43,7 @@ export const projects = [
   },
   {
 		year: "2023",
-    name: "Neo-Terraform chronicles",
+    name: "Neo-Terraform",
     type: "Music Video",
 		video: "/video/4.mp4",
     photosList: [
@@ -57,7 +57,7 @@ export const projects = [
   },
 	{
 		year: "2024",
-    name: "Neo-Terraform chronicles",
+    name: "Chronicles Neo",
     type: "Music Video",
 		video: "/video/5.mp4",
     photosList: [
