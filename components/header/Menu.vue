@@ -15,10 +15,10 @@
 
 				<div class="menu-footer">
 					<div class="footer-item">
-					<a href="#" class="p1" target="_blank">
-						Privacy Policy
-					</a>
-					</div>
+						<nuxt-link to="/privacy" class="p1">
+							Privacy Policy
+						</nuxt-link>
+						</div>
 					<div class="footer-item">
 						<p class="p1">
 							2025 DOGADOGA <br>
@@ -26,9 +26,9 @@
 						</p>
 					</div>
 					<div class="footer-item">
-					<a href="#" class="p1" target="_blank">
-						Cookie Policy
-					</a>
+						<nuxt-link to="/cookie" class="p1">
+							Cookie Policy
+						</nuxt-link>
 					</div>
 
 				</div>

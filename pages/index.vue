@@ -21,7 +21,9 @@
 			<CommonBlur class="footer-blur" />
 			<HeaderType />
 		</div>
-		<TheFooter />
+		<div class="main-footer">
+			<TheFooter />
+		</div>
   </main>
 </template>
 <script setup lang="ts">
@@ -72,5 +74,15 @@ const viewType = useState<view>('view-type');
 	top: auto;
 	bottom: 0;
 	transform: rotate(180deg) translateY(-50%);
+}
+.main-footer {
+	position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+	z-index: var(--z-footer);
+	@include mobile {
+		display: none;
+	}
 }
 </style>

@@ -54,12 +54,14 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       el: Element,
       done
     ) => {
+      useLockScroll(false)
+			useScrollTo(0, { immediate: true })
+
       gsap.to(".loader", {
         autoAlpha: 0,
         duration,
         onComplete() {
           transitionDone.value = true
-          useLockScroll(false)
         },
       })
 

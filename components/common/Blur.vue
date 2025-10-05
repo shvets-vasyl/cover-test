@@ -39,7 +39,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  --blur: blur(3px);
+  --blur: blur(2px);
 
   -webkit-backdrop-filter: var(--blur);
   backdrop-filter: var(--blur);
@@ -58,7 +58,11 @@
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-.main-page.list {
-	height: 18.75rem;
+
+.policy .blur {
+	transform: translateY(-25%) translateZ(0);
+	@include mobile {
+		transform: translateY(-50%) translateZ(0);
+	}
 }
 </style>
