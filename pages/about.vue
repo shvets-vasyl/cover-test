@@ -76,8 +76,8 @@
 
       <div class="footer">
         <div class="col">
-          <a href="mailto:dogadoga@gmail.com" class="mail p1">
-            <CommonLinkTemplate text="dogadoga@gmail.com" />
+          <a href="mailto:info@dogadoga.agency" class="mail p1">
+            <CommonLinkTemplate text="info@dogadoga.agency" />
           </a>
         </div>
         <div class="col">

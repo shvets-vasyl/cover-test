@@ -59,7 +59,7 @@
   transform: translateZ(0);
 }
 
-.policy .blur {
+.policy .blur, .contact-page .blur {
 	transform: translateY(-25%) translateZ(0);
 	@include mobile {
 		transform: translateY(-50%) translateZ(0);
