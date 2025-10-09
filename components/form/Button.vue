@@ -13,5 +13,9 @@ defineProps<{text: string}>()
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include mobile {
+		height: 2.125rem;
+		font-size: 1.25rem;
+	}
 }
 </style>

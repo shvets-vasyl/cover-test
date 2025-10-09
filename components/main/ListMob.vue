@@ -56,9 +56,17 @@ const toggle = (index: number) => {
     padding: 8.125rem 0 6.5rem;
   }
 }
+.marketing-page .list-mob {
+	@include mobile {
+		padding: 3rem 0 6.5rem;
+	}
+}
 .title {
   margin-left: 2.8125rem;
   margin-bottom: 1.5rem;
+	@include mobile {
+		margin-left: 3.8125rem;
+	}
 }
 .head {
   display: grid;

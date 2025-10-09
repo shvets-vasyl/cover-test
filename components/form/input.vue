@@ -61,6 +61,10 @@ function onInput(e: Event, field: any) {
 	letter-spacing: -0.07em;
 	color: var(--c-accent);
 	text-align: center;
+	@include mobile {
+		height: 4.5rem;
+		padding-bottom: .3125rem;
+	}
 }
 .input::placeholder {
   opacity: 1;

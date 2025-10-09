@@ -46,6 +46,10 @@ defineProps<{
 	letter-spacing: -0.07em;
 	color: var(--c-accent);
 	text-align: center;
+
+	@include mobile {
+		height: 5.5rem;
+	}
 }
 
 .textarea::placeholder {

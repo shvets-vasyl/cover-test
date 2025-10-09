@@ -92,11 +92,20 @@ const onSubmit: SubmissionHandler<any> = async (values: TypeValues, { resetForm 
   width: 25.5625rem;
   text-align: center;
   opacity: 0.5;
+	@include mobile {
+		width: 100%;
+	}
 }
 .field {
   margin-bottom: 2rem;
+	@include mobile {
+		margin-bottom: 0;
+	}
 }
 .field-phone {
 	margin-bottom: 3.375rem;
+	@include mobile {
+		margin-bottom: 1.5rem;
+	}
 }
 </style>
