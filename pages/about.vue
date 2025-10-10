@@ -25,10 +25,9 @@
       <div class="about">
         <p class="about-title h6">About Us</p>
         <p class="about-descr p1">
-          We are a visual production studio built on influence, shaped by
-          culture. Our deep knowledge of talent and the communities that love
-          them means we create authentic and beautifully shot visuals that
-          reflect the worlds and people you want to connect with.
+          DOGADOGA is a creative partner for those who seek meaning, not just visuals.
+					We blend artistic instinct with strategic thinking to craft films, campaigns, and stories that redefine how brands connect with the world.
+					We don’t work for clients — we create with them.
         </p>
       </div>
 
@@ -37,19 +36,17 @@
         <div class="mission">
           <p class="mission-title h6">Our Mission</p>
           <p class="mission-descr p1">
-            We know how to get the most out of talent both behind and in front
-            of the camera – whether it’s bringing to the table talent insights
-            that inform concepts, scripts and storyboarding, or our relaxed
-            on-set culture.
+            To turn ideas into experiences that move hearts and shift perception.
+						We believe in emotional precision — in crafting every frame with purpose, every story with honesty, and every project with the courage to stand apart.
           </p>
         </div>
 
         <div class="vision">
           <p class="vision-title h6">Our Vision</p>
           <p class="vision-descr p1">
-            From working with directors and writers with culturally relevant
-            perspectives, to filming some of the most famous names on the
-            planet, we create content that feels true to you and your brand.
+            To become the creative partner brands and artists trust when they want more than content — when they want impact.
+						We aim to shape a culture where visuals don’t just sell, they speak.
+						Where collaboration becomes creation.
           </p>
         </div>
 
@@ -59,12 +56,13 @@
       <div class="services">
         <p class="services-title h6">Services</p>
         <div class="services-descr p1">
-          <div>Branded Content</div>
-          <div>Commercials</div>
-          <div>Music Videos</div>
-          <div>Show Visuals</div>
-          <div>Live Streaming</div>
-          <div>Multicam Live Session</div>
+          <div>Creative Direction & Strategy</div>
+          <div>Commercial & Branded Films</div>
+          <div>Music Videos & Artist Visuals</div>
+          <div>Full-Cycle Production</div>
+          <div>CGI & AI-Driven Visuals</div>
+          <div>Campaign Development</div>
+          <div>Live & Digital Experiences</div>
         </div>
       </div>
 

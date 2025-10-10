@@ -17,7 +17,7 @@
 		</div>
 
     <p class="descr p2">
-      To reach Dogadoga Studio or request a custom proposal for your project,
+      To reach DOGADOGA AGENCY or request a custom proposal for your project,
       please fill out the form below — our team will get back to you within 24
       hours.
     </p>
