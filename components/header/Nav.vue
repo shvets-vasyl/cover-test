@@ -13,10 +13,10 @@ const nav = [
 		label: 'About Us',
 		href: '/about'
 	},
-	{
-		label: 'Marketing',
-		href: '/marketing'
-	},
+	// {
+	// 	label: 'Marketing',
+	// 	href: '/marketing'
+	// },
 	{
 		label: 'Contact Us',
 		href: '/contact'
