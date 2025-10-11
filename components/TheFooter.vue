@@ -29,6 +29,10 @@ const docs = [
     label: "Cookie Policy",
     href: "/cookie",
   },
+	{
+    label: "Terms of Use",
+    href: "/terms",
+  },
 ];
 </script>
 <style scoped lang="scss">
@@ -40,6 +44,7 @@ const docs = [
 	@include mobile {
 		padding: 0 1rem 1rem;
 		position: relative;
+		margin-top: 2rem;
 	}
 }
 .copy {
@@ -50,7 +55,7 @@ const docs = [
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
-		bottom: 1rem;
+		bottom: 3rem;
 	}
 }
 .copy:deep(svg) {

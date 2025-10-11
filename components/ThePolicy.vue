@@ -115,4 +115,10 @@ defineProps<{
 	border-radius: 100%;
 	background: var(--c-accent);
 }
+.block-text:deep(a) {
+	text-decoration: underline;
+}
+.block-text:deep(a:hover) {
+	text-decoration: none;
+}
 </style>

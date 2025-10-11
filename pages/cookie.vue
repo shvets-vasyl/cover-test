@@ -12,59 +12,91 @@ definePageMeta({
 const data = {
 	title: "Cookie Policy",
 	update: {
-		title: "Update: 25 Nov, 2025",
+		title: "Last updated: 2025",
 		text: [
-			"This website is operated by L'Étude and OUTSTANDING CONTRIBUTION TO THE MODERN MOVEMENT LLC. Throughout the site, the terms “we”, “us” and “our” refer to L'Étude. By accessing or using this website, you agree to be bound by these Terms of Use (“Terms”). If you do not agree, you may not use the website.",
-			"We may update these Terms at any time by posting changes on this page. Your continued use of the site constitutes acceptance of those changes."
+			"This Cookie Policy explains how DOGADOGA (“we”, “us”, “our”) uses cookies and similar technologies on dogadoga.agency.",
+			"By continuing to browse our site, or by clicking “Accept all”, you agree to the use of cookies as described below.",
+			"You can change or withdraw your consent at any time through Cookie Settings in the footer."
 		]
 	},
 	block: [
 		{
-			title: "1. Use of the Website",
+			title: "1. What Are Cookies",
 			text: [
 				`
-					<p>This site is provided for informational and creative purposes only.</p>
-					<p>You agree not to:</p>
+					<p>Cookies are small text files stored on your device that help websites function and improve your experience.</p>
+					<p>They may store preferences, track performance, and allow certain features (like video playback or analytics).</p>
+				`
+			]
+		},
+		{
+			title: "2. Types of Cookies We Use",
+			text: [
+				`
+					<p>Essential Cookies</p>
+					<br />
+					<p>Required for the site to work properly — for example, to remember your privacy settings or enable secure navigation.
+					These cannot be disabled.</p>
+					<br />
+					<p>Analytics Cookies</p>
+					<br />
+					<p>Help us understand how visitors use our site — which pages are most visited, how users move through the site, and where traffic comes from.</p>
+					<p>Used only with your consent.</p>
+					<br />
+					<p>Functional Cookies</p>
+					<br />
+					<p>Enhance functionality and personalization — for example, remembering language preferences or improving video playback performance.</p>
+					<br />
+					<p>Marketing Cookies</p>
+					<br />
+					<p>Used (only with consent) to measure engagement or display relevant creative content and ads.</p>
+				`
+			]
+		},
+		{
+			title: "3. Third-Party Services",
+			text: [
+				`
+					<p>We may use trusted third parties that set their own cookies, such as:</p>
+					<br />
 					<ul>
-						<li>Use the site for any unlawful, harmful, or infringing activity.</li>
-						<li>Upload or transmit any viruses, malware, or other harmful code.</li>
-						<li>Attempt to disrupt or gain unauthorized access to the site.</li>
+						<li>Google Analytics (traffic insights)</li>
+						<li>Vimeo / YouTube (embedded video playback)</li>
+						<li>Instagram / Meta / LinkedIn (social integrations)</li>
 					</ul>
+					<br />
+					<p>Each provider has its own privacy policy.</p>
 				`
 			]
 		},
 		{
-			title: "2. Intellectual Property",
+			title: "4. Managing Cookies",
 			text: [
 				`
-					<p>This site may contain links to third-party websites. We are not responsible for the content, accuracy, or policies of any third-party site. Your interactions with third-party sites are at your own risk.</p>
+					<p>On your first visit, you’ll see a cookie banner asking for consent.
+You can accept, reject, or customize settings anytime by clicking “Cookie Settings” at the bottom of the page.</p>
+<br />
+					<p>You can also adjust cookie preferences through your browser settings.</p>
+					<p>Please note: disabling some cookies may affect site performance or functionality.</p>
 				`
 			]
 		},
 		{
-			title: "4. Accuracy of Information",
+			title: "5. Indemnification",
 			text: [
 				`
-					<p>The information provided on this site is for general purposes only. While we aim to keep it accurate and current, we make no guarantees regarding its completeness, reliability, or timeliness.</p>
-					<p>You acknowledge that reliance on the information is at your own risk.</p>
+					<p>We may update this Cookie Policy periodically to reflect new legal or technical requirements.</p>
+					<p>The latest version will always be available at dogadoga.agency/cookies.</p>
 				`
 			]
 		},
 		{
-			title: "5. Disclaimer of Warranties & Limitation of Liability",
+			title: "6. Contact",
 			text: [
 				`
-					<p>This site is provided “as is” and “as available” without warranties of any kind, either express or implied.</p>
-					<p>We do not guarantee that the site will be uninterrupted, secure, or error-free.</p>
-					<p>To the fullest extent permitted by law, L'Étude and its affiliates shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from your use of the site.</p>
-				`
-			]
-		},
-		{
-			title: "6. Indemnification",
-			text: [
-				`
-					<p>You agree to indemnify and hold harmless L'Étude, its affiliates, and team members from any claims or demands made by third parties due to or arising out of your violation of these Terms or your misuse of the site.</p>
+					<p>If you have any questions about our cookie practices, contact us at:</p>
+					<p>📧 info@dogadoga.agency</p>
+					<p>🌍 dogadoga.agency</p>
 				`
 			]
 		}

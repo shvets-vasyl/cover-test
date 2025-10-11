@@ -50,7 +50,7 @@
           </p>
         </div>
 
-        <p class="info-title info-title-2 h6">2024</p>
+        <p class="info-title info-title-2 h6">2025</p>
       </div>
 
       <div class="services">

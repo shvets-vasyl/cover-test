@@ -13,17 +13,23 @@
 					<HeaderTheme />
 				</div>
 
+				<div class="menu-copy">
+					<p class="p1">
+						2025 DOGADOGA <br>
+						All Rights Reserved
+					</p>
+				</div>
+
 				<div class="menu-footer">
 					<div class="footer-item">
 						<nuxt-link to="/privacy" class="p1">
 							Privacy Policy
 						</nuxt-link>
-						</div>
+					</div>
 					<div class="footer-item">
-						<p class="p1">
-							2025 DOGADOGA <br>
-							All Rights Reserved
-						</p>
+						<nuxt-link to="/terms" class="p1">
+							Terms of Use
+						</nuxt-link>
 					</div>
 					<div class="footer-item">
 						<nuxt-link to="/cookie" class="p1">
@@ -71,6 +77,7 @@ const openMenuState = useState<boolean>("open-menu")
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 .menu-footer {
 	margin-top: auto;
@@ -84,5 +91,11 @@ const openMenuState = useState<boolean>("open-menu")
 }
 .footer-item:nth-child(3) {
 	text-align: right;
+}
+.menu-copy {
+	position: absolute;
+	bottom: 3.5rem;
+	left: 50%;
+	transform: translateX(-50%);
 }
 </style>

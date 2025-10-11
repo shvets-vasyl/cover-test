@@ -29,7 +29,7 @@
 				</div>
 				<div class="foot">
 					<p class="about p1">About Project</p>
-					<p class="descr p2">{{ project.descr }}</p>
+					<div class="descr p2" v-html="project.descr" />
 				</div>
 			</div>
 		</div>
