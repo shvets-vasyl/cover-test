@@ -107,8 +107,8 @@ const socials = [
 .contact {
 	@include mobile {
 		order: 2;
-		padding-top: 4.375rem;
-		padding-bottom: 4.375rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;

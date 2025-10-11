@@ -31,7 +31,6 @@ const nav = [
 	@include mobile {
 		flex-direction: column;
 		gap: 1rem;
-		padding-top: 13.875rem;
 	}
 }
 .item {

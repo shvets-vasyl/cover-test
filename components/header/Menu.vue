@@ -68,7 +68,7 @@ const openMenuState = useState<boolean>("open-menu")
 	inset: 0;
 }
 .menu {
-	height: 33.8125rem;
+	height: 80vh;
 	background: var(--c-accent);
 }
 .menu-content {
@@ -80,7 +80,7 @@ const openMenuState = useState<boolean>("open-menu")
 	position: relative;
 }
 .menu-footer {
-	margin-top: auto;
+	margin-top: 5rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: flex-end;
@@ -91,6 +91,9 @@ const openMenuState = useState<boolean>("open-menu")
 }
 .footer-item:nth-child(3) {
 	text-align: right;
+}
+.menu-nav {
+	margin-top: auto;
 }
 .menu-copy {
 	position: absolute;

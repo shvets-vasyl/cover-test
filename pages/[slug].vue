@@ -2,6 +2,7 @@
 	<div class="project-page">
 		<HeaderBasic project-page />
 		<HeaderMenu />
+		<CommonBlur />
 
 		<div class="wrap">
 			<div class="all-works-mob">
@@ -54,6 +55,12 @@ const project = projects.filter(el => el.link === route.fullPath)[0]
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+
+	@include mobile {
+		height: auto;
+		min-height: 100vh;
+		flex-direction: column;
+	}
 }
 .wrap {
 	padding: 7.5rem 0 1rem 1.5rem;
@@ -65,9 +72,10 @@ const project = projects.filter(el => el.link === route.fullPath)[0]
 	@include mobile {
 		display: flex;
 		flex-direction: column;
-		padding: 11.75rem 1rem 2.5rem;
+		padding: 7rem 1rem 2.5rem;
 		justify-content: space-between;
 		align-items: center;
+		flex: 1 1 auto;
 	}
 }
 .content-wrap {
@@ -92,6 +100,7 @@ const project = projects.filter(el => el.link === route.fullPath)[0]
 	@include mobile {
 		display: block;
 		position: relative;
+		margin-bottom: 1.5rem;
 	}
 }
 .all-works-mob:after {
@@ -124,6 +133,11 @@ const project = projects.filter(el => el.link === route.fullPath)[0]
 		display: flex;
 		gap: .5rem;
 		justify-content: center;
+	}
+}
+.foot {
+	@include mobile {
+		margin-top: 1.5rem;
 	}
 }
 </style>
