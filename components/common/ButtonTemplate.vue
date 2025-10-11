@@ -1,5 +1,5 @@
 <template>
-  <span class="btn-template">
+  <span class="btn-template" :class="{dark}">
     {{ text }}
     <svg v-if="icon" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -13,6 +13,7 @@
 defineProps<{
   text: string;
 	icon?: boolean
+	dark?: boolean
 }>();
 </script>
 <style scoped lang="scss">
@@ -25,6 +26,10 @@ defineProps<{
   color: var(--c-black);
 	gap: .5rem;
 	transition: all .3s ease;
+}
+.btn-template.dark {
+	background: var(--c-dark);
+  color: var(--c-accent);
 }
 @include hover {
 	.btn-template:hover {

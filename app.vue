@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
 		<ThePreloader v-if="!preloaderDone" />
+		<TheCookie />
 		<TheLoader />
     <NuxtPage />
   </div>
