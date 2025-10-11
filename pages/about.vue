@@ -228,16 +228,22 @@ const scrollToggle = () => {
 .get-in-touch-link {
   position: relative;
   padding-right: 0.75rem;
+  padding-left: 0.75rem;
 }
-.get-in-touch-link:after {
+.get-in-touch-link:after, .get-in-touch-link:before {
   content: "";
   position: absolute;
   top: 0.8125rem;
-  right: 0;
   width: 0.3125rem;
   height: 0.3125rem;
   border-radius: 100%;
   background: var(--c-accent);
+}
+.get-in-touch-link:before {
+	left: 0;
+}
+.get-in-touch-link:after {
+	right: 0;
 }
 .footer {
   display: grid;
