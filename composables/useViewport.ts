@@ -8,8 +8,8 @@ export function useViewport() {
   const isMobile = ref(false)
 
   function setViewport() {
-    isDesktop.value = window.innerWidth >= viewports.desktop
-    isMobile.value = window.innerWidth < viewports.desktop
+		isDesktop.value = window.innerWidth > viewports.desktop
+		isMobile.value = window.innerWidth <= viewports.desktop
   }
 
   onMounted(() => {

@@ -10,12 +10,14 @@
 		</div>
 		<HeaderMenu />
 
-		<div class="main-wrap">
-			<MainList v-if="viewType === 'list'" />
-			<MainListMob v-if="viewType === 'list'" />
-			<MainGallery v-if="viewType === 'gallery'" />
-			<MainGalleryMob v-if="viewType === 'gallery'" />
-		</div>
+		<ClientOnly>
+			<div class="main-wrap">
+				<MainList v-if="viewType === 'list' && isDesktop" />
+				<MainListMob v-if="viewType === 'list' && !isDesktop" />
+				<MainGallery v-if="viewType === 'gallery' && isDesktop" />
+				<MainGalleryMob v-if="viewType === 'gallery' && !isDesktop" />
+			</div>
+		</ClientOnly>
 
 		<div class="mob-type">
 			<CommonBlur class="footer-blur" />
@@ -27,6 +29,7 @@
   </main>
 </template>
 <script setup lang="ts">
+
 definePageMeta({
   pageTransition: {
     name: "page",
@@ -36,6 +39,8 @@ definePageMeta({
 
 type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type');
+
+const { isDesktop } =useViewport()
 </script>
 <style scoped lang="scss">
 .main-page {
