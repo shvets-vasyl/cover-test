@@ -44,18 +44,18 @@ export const projects = [
   },
 	{
 		year: "2025",
-    name: "Porsche x Mercedes",
+    name: "Porsche",
     type: "BTS",
 		video: "/video/project3.mp4",
     photosList: [
-      "/images/music/1.png",
-      "/images/music/2.png",
-      "/images/music/3.png",
-      "/images/music/4.png",
+      "/images/bts/1.png",
+      "/images/bts/2.png",
+      "/images/bts/3.png",
+      "/images/bts/4.png",
     ],
-    link: "/porsche-x-mercedes",
+    link: "/porsche",
 		descr: `
-			Behind the shoot of two legends.
+			Behind the shoot of the legend.
 			<br />
 			Let’s DOGADOGA.
 		`
