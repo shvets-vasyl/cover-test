@@ -44,8 +44,8 @@ export const projects = [
   },
 	{
 		year: "2025",
-    name: "Music Video",
-    type: "Reel",
+    name: "Porsche x Mercedes",
+    type: "BTS",
 		video: "/video/project3.mp4",
     photosList: [
       "/images/music/1.png",
@@ -53,13 +53,9 @@ export const projects = [
       "/images/music/3.png",
       "/images/music/4.png",
     ],
-    link: "/music-video2",
+    link: "/porsche-x-mercedes",
 		descr: `
-			We step into the artist’s world and create from within it.
-			<br />
-			The song leads — we follow its rhythm, its truth, its vision.
-			<br />
-			Together, we give it form and soul.
+			Behind the shoot of two legends.
 			<br />
 			Let’s DOGADOGA.
 		`
