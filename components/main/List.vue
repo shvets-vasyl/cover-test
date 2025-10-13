@@ -2,8 +2,6 @@
   <div class="list">
     <div class="bg" ref="bgRef" />
 
-		<p class="title h6">Projects</p>
-
     <nuxt-link
       v-for="({ name, type, photosList, link }, i) in projects"
       :key="i"
@@ -14,7 +12,8 @@
     >
       <div class="content">
         <div class="count p1">
-          {{ String(i + 1).padStart(2, "0") }}
+					<h6 v-if="i === 0" class="title h6">Projects</h6>
+					<p>{{ String(i + 1).padStart(2, "0") }}</p>
         </div>
 
         <div v-for="(photo, idx) in photosList" :key="idx" class="photo">

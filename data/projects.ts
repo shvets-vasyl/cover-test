@@ -17,7 +17,7 @@ export const projects = [
 			We’re here to create with them — to do what we love,
 			and keep looking for what moves us next.
 			<br />
-			Let’s Dogadoga.
+			Let’s DOGADOGA.
 		`
   },
 	{
@@ -39,7 +39,29 @@ export const projects = [
 			<br />
 			Together, we give it form and soul.
 			<br />
-			Let’s Dogadoga.
+			Let’s DOGADOGA.
+		`
+  },
+	{
+		year: "2025",
+    name: "Music Video",
+    type: "Reel",
+		video: "/video/project3.mp4",
+    photosList: [
+      "/images/music/1.png",
+      "/images/music/2.png",
+      "/images/music/3.png",
+      "/images/music/4.png",
+    ],
+    link: "/music-video2",
+		descr: `
+			We step into the artist’s world and create from within it.
+			<br />
+			The song leads — we follow its rhythm, its truth, its vision.
+			<br />
+			Together, we give it form and soul.
+			<br />
+			Let’s DOGADOGA.
 		`
   },
 ];
