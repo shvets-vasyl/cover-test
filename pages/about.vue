@@ -26,8 +26,15 @@
         <p class="about-title h6">About Us</p>
         <p class="about-descr p1">
           DOGADOGA is a creative partner for those who seek meaning, not just visuals.
-					We blend artistic instinct with strategic thinking to craft films, campaigns, and stories that redefine how brands connect with the world.
+
+					We blend instinct and strategy to craft stories that redefine how brands connect with the world.
+
 					We don’t work for clients — we create with them.
+					<br>
+					<br>
+					“We wish to remain as we are.”
+					<br>
+					Not out of resistance, but out of essence — staying true to what moves us.
         </p>
       </div>
 
