@@ -18,7 +18,7 @@
 
     <div class="content">
       <h1 class="title">
-        <span class="h1">About DogaDoga</span>
+        <span class="h1">About DOGADOGA</span>
         <SvgR class="title-r" />
       </h1>
 

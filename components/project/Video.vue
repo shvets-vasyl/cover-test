@@ -1,6 +1,6 @@
 <template>
   <div class="video-wrap" :class="{ fullscreen }">
-    <SvgNormalLogo v-if="fullscreen" class="logo" />
+    <SvgNormalLogo v-if="fullscreen" class="logo" @click="fullscreen = false" />
 
     <button v-if="fullscreen" class="close p1" @click="fullscreen = false">
       <span>Close</span>
@@ -235,7 +235,7 @@ async function generateThumbnails(
   const ctx = canvas.getContext("2d")!;
 
   for (let i = 0; i < stamps.length; i++) {
-    hv.currentTime = stamps[i];
+		hv.currentTime = Math.min(stamps[i] + 0.5, hv.duration - 0.01);
     await waitEvent(hv, "seeked");
     ctx.drawImage(hv, 0, 0, w, h);
     try {
@@ -243,6 +243,15 @@ async function generateThumbnails(
     } catch {
       out[i] = null;
     }
+
+    // hv.currentTime = stamps[i];
+    // await waitEvent(hv, "seeked");
+    // ctx.drawImage(hv, 0, 0, w, h);
+    // try {
+    //   out[i] = canvas.toDataURL("image/jpeg", 0.7);
+    // } catch {
+    //   out[i] = null;
+    // }
   }
   document.body.removeChild(hv);
 }

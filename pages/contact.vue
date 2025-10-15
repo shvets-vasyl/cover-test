@@ -49,11 +49,11 @@ definePageMeta({
 const socials = [
   {
     text: "Instagram",
-    link: "#",
+    link: "https://www.instagram.com/dogadoga.agency/",
   },
   {
     text: "Youtube",
-    link: "#",
+    link: "https://www.youtube.com/@dogadoga-agency",
   },
   {
     text: "Vimeo",
