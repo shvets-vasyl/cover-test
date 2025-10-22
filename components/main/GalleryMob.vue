@@ -37,10 +37,10 @@
         <video
           class="video-element inner-video"
           :src="video"
+					muted
           preload="auto"
           playsinline
           loop
-          muted
           autoplay
         />
       </nuxt-link>
@@ -81,6 +81,18 @@ onBeforeUnmount(() => {
   el.removeEventListener("touchstart", onTouchStart as EventListener);
   el.removeEventListener("touchend", onTouchEnd as EventListener);
 });
+onMounted(() => {
+  const videos = document.querySelectorAll<HTMLVideoElement>(".video-element")
+
+  videos.forEach((video) => {
+    video.muted = true
+    video.playsInline = true
+
+    const playVideo = () => video.play().catch(() => {})
+    if (video.readyState >= 3) playVideo()
+    else video.addEventListener("loadeddata", playVideo, { once: true })
+  })
+})
 </script>
 
 <style scoped lang="scss">
