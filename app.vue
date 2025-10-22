@@ -12,7 +12,7 @@ type view = 'gallery' | 'list'
 
 const preloaderDone = useState('preloader-done', () => false);
 useState('transition-done', () => true);
-useState<view>('view-type', () => 'gallery');
+useState<view>('view-type', () => 'list');
 useState<boolean>("open-menu")
 </script>
 <style lang="scss" scoped></style>

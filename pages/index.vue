@@ -41,6 +41,13 @@ type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type');
 
 const { isDesktop } =useViewport()
+
+const preloaderDone = useState('preloader-done');
+watch(preloaderDone, (val) => {
+	if(val) {
+		viewType.value = 'gallery'
+	}
+})
 </script>
 <style scoped lang="scss">
 .main-page {
