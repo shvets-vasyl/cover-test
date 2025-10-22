@@ -41,12 +41,10 @@ type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type');
 
 const { isDesktop } =useViewport()
-
-const preloaderDone = useState('preloader-done');
-watch(preloaderDone, (val) => {
-	if(val) {
+onMounted(() => {
+	setTimeout(() => {
 		viewType.value = 'gallery'
-	}
+	}, 100)
 })
 </script>
 <style scoped lang="scss">

@@ -34,17 +34,15 @@
         class="item"
         :class="{ active: i === active }"
       >
-				<client-only>
-					<video
-						class="video-element inner-video"
-						:src="video"
-						muted
-						preload="auto"
-						playsinline
-						loop
-						autoplay
-					/>
-				</client-only>
+				<video
+					class="video-element inner-video"
+					:src="video"
+					muted
+					preload="auto"
+					playsinline
+					loop
+					autoplay
+				/>
       </nuxt-link>
     </div>
   </div>
