@@ -36,7 +36,7 @@
       >
 				<video
 					class="video-element inner-video"
-					:src="video"
+					ref="videoRefs"
 					muted
 					preload="auto"
 					playsinline
@@ -81,6 +81,17 @@ onBeforeUnmount(() => {
   el.removeEventListener("touchstart", onTouchStart as EventListener);
   el.removeEventListener("touchend", onTouchEnd as EventListener);
 });
+
+const videoRefs = ref<HTMLVideoElement[]>([])
+
+onMounted(() => {
+  nextTick(() => {
+    videoRefs.value.forEach((v, i) => {
+      v.src = projects[i].video
+      v.play().catch(() => {})
+    })
+  })
+})
 </script>
 
 <style scoped lang="scss">
