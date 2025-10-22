@@ -29,11 +29,12 @@
   </div>
 </template>
 <script setup lang="ts">
-
+type view = 'gallery' | 'list'
 const { isDesktop } = useViewport()
 
 const percent = ref(0);
 const preloaderDone = useState<boolean>("preloader-done");
+const viewType = useState<view>('view-type');
 
 const dur = 2
 
@@ -56,6 +57,9 @@ const init = () => {
 		width: isDesktop.value ? "84.375rem" : "19rem",
 		duration: dur,
 	}, "<")
+	tl.add(() => {
+		viewType.value = 'gallery'
+	})
   tl.to(".preloader", {
     yPercent: 105
   })
