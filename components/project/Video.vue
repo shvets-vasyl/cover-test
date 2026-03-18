@@ -235,24 +235,25 @@ async function generateThumbnails(
   const ctx = canvas.getContext("2d")!;
 
   for (let i = 0; i < stamps.length; i++) {
-		hv.currentTime = Math.min(stamps[i] + 0.5, hv.duration - 0.01);
-    await waitEvent(hv, "seeked");
-    ctx.drawImage(hv, 0, 0, w, h);
-    try {
-      out[i] = canvas.toDataURL("image/jpeg", 0.7);
-    } catch {
-      out[i] = null;
-    }
+		hv.currentTime = Math.min(stamps[i], hv.duration - 0.01);
+		await waitEvent(hv, "seeked");
 
-    // hv.currentTime = stamps[i];
-    // await waitEvent(hv, "seeked");
-    // ctx.drawImage(hv, 0, 0, w, h);
-    // try {
-    //   out[i] = canvas.toDataURL("image/jpeg", 0.7);
-    // } catch {
-    //   out[i] = null;
-    // }
-  }
+		await hv.play().catch(() => {});
+		await new Promise<void>((r) => {
+			const rvfc = (hv as any).requestVideoFrameCallback;
+			if (typeof rvfc === "function") rvfc.call(hv, () => r());
+			else requestAnimationFrame(() => r());
+		});
+		hv.pause();
+
+		ctx.drawImage(hv, 0, 0, w, h);
+
+		try {
+			out[i] = canvas.toDataURL("image/jpeg", 0.7);
+		} catch {
+			out[i] = null;
+		}
+	}
   document.body.removeChild(hv);
 }
 </script>
@@ -300,8 +301,8 @@ async function generateThumbnails(
   transition:
     opacity 0.3s ease,
     transform 0.1s ease;
-  top: -6.5rem;
-  left: -1.5rem;
+  top: -9.75rem;
+  left: -3.25rem;
 
 	@include mobile {
 		opacity: 1;

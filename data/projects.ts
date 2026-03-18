@@ -60,4 +60,40 @@ export const projects = [
 			Let’s DOGADOGA.
 		`
   },
+	{
+		year: "2025",
+    name: "Porsche",
+    type: "BTS",
+		video: "/video/project4.mp4",
+    photosList: [
+      "/images/bts/1.png",
+      "/images/bts/2.png",
+      "/images/bts/3.png",
+      "/images/bts/4.png",
+    ],
+    link: "/porsche2",
+		descr: `
+			Behind the shoot of the legend.
+			<br />
+			Let’s DOGADOGA.
+		`
+  },
+	{
+		year: "2025",
+    name: "Porsche",
+    type: "BTS",
+		video: "/video/project5.mp4",
+    photosList: [
+      "/images/bts/1.png",
+      "/images/bts/2.png",
+      "/images/bts/3.png",
+      "/images/bts/4.png",
+    ],
+    link: "/corvet",
+		descr: `
+			Behind the shoot of the legend.
+			<br />
+			Let’s DOGADOGA.
+		`
+  },
 ];
