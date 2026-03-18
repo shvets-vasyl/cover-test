@@ -1,4 +1,43 @@
 export const projects = [
+	{
+		year: "2026",
+    name: "Porsche 930 Turbo Slant Nose",
+    type: "CARS",
+		video: "/video/project4.mp4",
+    photosList: [
+      "/images/por/por-1.png",
+      "/images/por/por-2.png",
+      "/images/por/por-3.png",
+      "/images/por/por-4.png",
+    ],
+    link: "/porsche-930",
+		descr: `
+			A Porsche 930 Turbo Slant Nose.
+			<br />
+			A time capsule finally set in motion.
+			<br />
+			This is where our story begins.
+		`
+  },
+	{
+		year: "2026",
+    name: "Corvette C3",
+    type: "CARS",
+		video: "/video/project5.mp4",
+    photosList: [
+      "/images/cor/cor-1.png",
+      "/images/cor/cor-2.png",
+      "/images/cor/cor-3.png",
+      "/images/cor/cor-4.png",
+    ],
+    link: "/corvette-C3",
+		descr: `
+			First laps for a
+			<br />
+			time-capsule Corvette C3.
+		`
+  },
+
   {
 		year: "2025",
     name: "Commercial",
@@ -60,40 +99,5 @@ export const projects = [
 			Let’s DOGADOGA.
 		`
   },
-	{
-		year: "2025",
-    name: "Porsche",
-    type: "BTS",
-		video: "/video/project4.mp4",
-    photosList: [
-      "/images/bts/1.png",
-      "/images/bts/2.png",
-      "/images/bts/3.png",
-      "/images/bts/4.png",
-    ],
-    link: "/porsche2",
-		descr: `
-			Behind the shoot of the legend.
-			<br />
-			Let’s DOGADOGA.
-		`
-  },
-	{
-		year: "2025",
-    name: "Porsche",
-    type: "BTS",
-		video: "/video/project5.mp4",
-    photosList: [
-      "/images/bts/1.png",
-      "/images/bts/2.png",
-      "/images/bts/3.png",
-      "/images/bts/4.png",
-    ],
-    link: "/corvet",
-		descr: `
-			Behind the shoot of the legend.
-			<br />
-			Let’s DOGADOGA.
-		`
-  },
+
 ];
