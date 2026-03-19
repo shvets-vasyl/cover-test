@@ -53,11 +53,7 @@ const socials = [
   },
   {
     text: "Youtube",
-    link: "https://www.youtube.com/@dogadoga-agency",
-  },
-  {
-    text: "Vimeo",
-    link: "#",
+    link: "https://www.youtube.com/@DOGADOGAagency",
   },
 ];
 </script>

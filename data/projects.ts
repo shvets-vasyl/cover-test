@@ -20,6 +20,24 @@ export const projects = [
 		`
   },
 	{
+		year: "2025",
+    name: "Porsche",
+    type: "BTS",
+		video: "/video/project3.mp4",
+    photosList: [
+      "/images/bts/1.png",
+      "/images/bts/2.png",
+      "/images/bts/3.png",
+      "/images/bts/4.png",
+    ],
+    link: "/porsche",
+		descr: `
+			Behind the shoot of the legend.
+			<br />
+			Let’s DOGADOGA.
+		`
+  },
+	{
 		year: "2026",
     name: "Corvette C3",
     type: "CARS",
@@ -81,23 +99,6 @@ export const projects = [
 			Let’s DOGADOGA.
 		`
   },
-	{
-		year: "2025",
-    name: "Porsche",
-    type: "BTS",
-		video: "/video/project3.mp4",
-    photosList: [
-      "/images/bts/1.png",
-      "/images/bts/2.png",
-      "/images/bts/3.png",
-      "/images/bts/4.png",
-    ],
-    link: "/porsche",
-		descr: `
-			Behind the shoot of the legend.
-			<br />
-			Let’s DOGADOGA.
-		`
-  },
+
 
 ];
