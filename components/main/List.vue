@@ -3,9 +3,9 @@
     <div class="bg" ref="bgRef" />
 
     <nuxt-link
-      v-for="({ name, type, photosList, link }, i) in projects"
+      v-for="({ title, category, images, slug }, i) in data"
       :key="i"
-      :to="link"
+      :to="'/' + slug"
       class="item"
       @mouseenter="onEnter"
       @mouseleave="onLeave"
@@ -16,13 +16,13 @@
 					<p>{{ String(i + 1).padStart(2, "0") }}</p>
         </div>
 
-        <div v-for="(photo, idx) in photosList" :key="idx" class="photo">
-          <img :src="photo" class="inner-img" alt="" />
+        <div v-for="(photo, idx) in images" :key="idx" class="photo">
+          <img :src="api_url + photo" class="inner-img" alt="" />
         </div>
 
         <div class="info">
-          <p class="p1">{{ name }}</p>
-          <p class="p1">{{ type }}</p>
+          <p class="p1">{{ title }}</p>
+          <p class="p1">{{ category.category_name }}</p>
         </div>
       </div>
     </nuxt-link>
@@ -30,7 +30,11 @@
 </template>
 
 <script setup lang="ts">
-import { projects } from "@/data/projects"
+const props = defineProps<{
+	data: any[]
+}>()
+
+const { api_url } = useRuntimeConfig().public
 
 const bgRef = ref<HTMLDivElement | null>(null);
 

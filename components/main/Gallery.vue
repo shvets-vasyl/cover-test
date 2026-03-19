@@ -4,12 +4,12 @@
 			<div class="swiper swiper-text">
 				<div class="swiper-wrapper">
 					<div
-						v-for="{name, link}, i in projects"
+						v-for="{title, slug}, i in data"
 						:key="i"
 						class="swiper-slide"
 					>
-						<nuxt-link :to="link" class="text h6">
-							<CommonLinkTemplate :text="name" />
+						<nuxt-link :to="'/' + slug" class="text h6">
+							<CommonLinkTemplate :text="title" />
 						</nuxt-link>
 					</div>
 				</div>
@@ -18,13 +18,13 @@
 			<div class="swiper swiper-detail">
 				<div class="swiper-wrapper">
 					<div
-						v-for="{year, type}, i in projects"
+						v-for="{year, category}, i in data"
 						:key="i"
 						class="swiper-slide"
 					>
 						<div class="detail p1">
 							<span>{{ year }}</span>
-							<span>{{ type }}</span>
+							<span>{{ category.category_name }}</span>
 						</div>
 					</div>
 				</div>
@@ -34,14 +34,14 @@
 			<div class="swiper swiper-gallery">
 				<div class="swiper-wrapper">
 					<div
-						v-for="{video, link}, i in projects"
+						v-for="{file_url, slug}, i in data"
 						:key="i"
 						class="swiper-slide"
 					>
-						<nuxt-link :to="link" class="item">
+						<nuxt-link :to="'/' + slug" class="item">
 							<video
 								class="video-element inner-video"
-								:src="video"
+								:src="file_url"
 								preload="auto"
 								playsinline
 								loop
@@ -59,7 +59,10 @@
 <script setup lang="ts">
 import Swiper from 'swiper';
 import { Mousewheel,Controller } from 'swiper/modules'
-import { projects } from "@/data/projects"
+
+const props = defineProps<{
+	data: any[]
+}>()
 
 const { isMobile } = useViewport()
 

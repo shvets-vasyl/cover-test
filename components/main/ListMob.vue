@@ -3,7 +3,7 @@
     <p class="title h6">Projects</p>
 
     <div
-      v-for="({ name, type, link, video }, i) in projects"
+      v-for="({ title, category, slug, file_url }, i) in data"
       :key="i"
       class="item"
       :class="{ active: activeIndex === i }"
@@ -11,17 +11,17 @@
       <div class="head" @click="toggle(i)">
         <p class="count h6">{{ String(i + 1).padStart(2, "0") }}</p>
         <div class="info">
-          <p class="name h6">{{ name }}</p>
-          <p class="type p1">{{ type }}</p>
+          <p class="name h6">{{ title }}</p>
+          <p class="type p1">{{ category.category_name }}</p>
         </div>
       </div>
 
       <div class="body">
         <div class="body-wrap">
-          <nuxt-link class="video" :to="link">
+          <nuxt-link class="video" :to="'/' + slug">
             <video
               class="inner-video"
-              :src="video"
+              :src="file_url"
               preload="auto"
               playsinline
               loop
@@ -29,7 +29,7 @@
               autoplay
             />
           </nuxt-link>
-          <nuxt-link class="more p1" :to="link"> More Info </nuxt-link>
+          <nuxt-link class="more p1" :to="'/' + slug"> More Info </nuxt-link>
         </div>
       </div>
       <div class="line" />
@@ -38,8 +38,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
-import { projects } from "@/data/projects"
+const props = defineProps<{
+	data: any[]
+}>()
 
 const activeIndex = ref<number | null>(null)
 

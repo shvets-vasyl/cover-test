@@ -1,5 +1,5 @@
 <template>
-  <main class="main-page" :class="{list: viewType === 'list'}">
+  <main v-if="data" class="main-page" :class="{list: viewType === 'list'}">
 		<CommonBlur />
 
 		<div class="main-header">
@@ -12,10 +12,10 @@
 
 		<ClientOnly>
 			<div class="main-wrap">
-				<MainList v-if="viewType === 'list' && isDesktop" />
-				<MainListMob v-if="viewType === 'list' && !isDesktop" />
-				<MainGallery v-if="viewType === 'gallery' && isDesktop" />
-				<MainGalleryMob v-if="viewType === 'gallery' && !isDesktop" />
+				<MainList v-if="viewType === 'list' && isDesktop" :data="data" />
+				<MainListMob v-if="viewType === 'list' && !isDesktop" :data="data" />
+				<MainGallery v-if="viewType === 'gallery' && isDesktop" :data="data" />
+				<MainGalleryMob v-if="viewType === 'gallery' && !isDesktop" :data="data" />
 			</div>
 		</ClientOnly>
 
@@ -41,6 +41,28 @@ type view = 'gallery' | 'list'
 const viewType = useState<view>('view-type');
 
 const { isDesktop } =useViewport()
+
+
+
+const nuxtApp = useNuxtApp()
+
+const { data } = await useAsyncData<any>(
+  () => "projects",
+  () => $fetch("/api/projects"),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: (key) =>
+      nuxtApp.payload.data[key] || nuxtApp.static.data[key],
+  }
+)
+
+if (!data.value) {
+  throw showError({
+    statusCode: 404,
+    statusMessage: "Projects not found",
+  })
+}
 </script>
 <style scoped lang="scss">
 .main-page {

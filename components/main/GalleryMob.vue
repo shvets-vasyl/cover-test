@@ -2,7 +2,7 @@
   <div class="gallery-mob" ref="wrap">
     <div class="info">
 			<div
-				v-for="({ name, type, year }, i) in projects"
+				v-for="({ title, category, year }, i) in data"
 				:key="i"
 				class="detail"
 				:class="{
@@ -15,10 +15,10 @@
 					next3: i - 3 === active,
 				}"
 			>
-				<p class="name">{{ name }}</p>
+				<p class="name">{{ title }}</p>
 				<p class="type p1">
 					<span>{{ year }}</span>
-					<span>{{ type }}</span>
+					<span>{{ category.category_name }}</span>
 				</p>
 				<p class="more">
 					More info
@@ -28,9 +28,9 @@
 
     <div class="videos">
       <nuxt-link
-        v-for="({ video, link }, i) in projects"
+        v-for="({ slug }, i) in data"
         :key="i"
-        :to="link"
+        :to="'/' + slug"
         class="item"
         :class="{ active: i === active }"
       >
@@ -50,7 +50,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { projects } from "@/data/projects";
+
+const props = defineProps<{
+	data: any[]
+}>()
+
+
 const { isDesktop } = useViewport();
 
 const wrap = ref<HTMLElement | null>(null);
@@ -63,7 +68,7 @@ const onTouchStart = (e: TouchEvent) => {
 const onTouchEnd = (e: TouchEvent) => {
   const dy = e.changedTouches[0].clientY - startY;
   if (Math.abs(dy) < 6) return;
-  const last = projects.length - 1;
+  const last = props.data.length - 1;
   if (dy < 0 && active.value < last) active.value++;
   else if (dy > 0 && active.value > 0) active.value--;
 };
@@ -87,7 +92,7 @@ const videoRefs = ref<HTMLVideoElement[]>([])
 onMounted(() => {
   nextTick(() => {
     videoRefs.value.forEach((v, i) => {
-      v.src = projects[i].video
+      v.src = props.data[i].file_url
       v.play().catch(() => {})
     })
   })

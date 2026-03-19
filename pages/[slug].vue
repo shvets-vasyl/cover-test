@@ -1,5 +1,5 @@
 <template>
-	<div class="project-page">
+	<div v-if="data" class="project-page">
 		<HeaderBasic project-page />
 		<HeaderMenu />
 		<CommonBlur />
@@ -10,35 +10,35 @@
 			</div>
 			<div class="video-wrap">
 				<ClientOnly>
-					<ProjectVideo :src="project.video" />
+					<ProjectVideo :src="data.file_url" />
 				</ClientOnly>
 				<div class="top mob">
-					<p class="name h6">{{ project.name }}</p>
+					<p class="name h6">{{ data.title }}</p>
 				</div>
 				<div class="body mob">
-					<p class="year p1">{{ project.year }}</p>
-					<p class="type p1">{{ project.type }}</p>
+					<p class="year p1">{{ data.year }}</p>
+					<p class="type p1">{{ data.category.category_name }}</p>
 				</div>
 			</div>
 			<div class="content-wrap">
 				<div class="top desk">
-					<p class="name h6">{{ project.name }}</p>
-					<p class="type p1">{{ project.type }}</p>
+					<p class="name h6">{{ data.title }}</p>
+					<p class="type p1">{{ data.category.category_name }}</p>
 				</div>
 				<div class="body desk">
-					<p class="year p1">{{ project.year }}</p>
+					<p class="year p1">{{ data.year }}</p>
 				</div>
 				<div class="foot">
 					<p class="about p1">About Project</p>
-					<div class="descr p2" v-html="project.descr" />
+					<div class="descr p2 pre-line">
+						{{ data.description }}
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 <script setup lang='ts'>
-import { projects } from "@/data/projects"
-
 definePageMeta({
   pageTransition: {
     name: "page",
@@ -47,7 +47,29 @@ definePageMeta({
 })
 
 const route = useRoute()
-const project = projects.filter(el => el.link === route.fullPath)[0]
+const slug = computed(() => String(route.params.slug || ""))
+const nuxtApp = useNuxtApp()
+
+const { data } = await useAsyncData<any>(
+  () => `project:${slug.value}`,
+  () =>
+    $fetch(`/api/projects/${slug.value}`),
+  {
+    server: true,
+    lazy: false,
+    watch: [slug],
+    getCachedData: (key) =>
+      nuxtApp.payload.data[key] || nuxtApp.static.data[key],
+  }
+)
+
+
+if (!data.value) {
+  throw showError({
+    statusCode: 404,
+    statusMessage: "Project not found",
+  })
+}
 </script>
 <style scoped lang='scss'>
 .project-page {

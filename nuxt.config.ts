@@ -86,4 +86,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
   devServer: { port: 6969 },
+
+	runtimeConfig: {
+    public: {
+      api_url: "https://api.dogadoga.agency",
+    },
+  },
 });

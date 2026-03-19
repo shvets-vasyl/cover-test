@@ -1,5 +1,5 @@
 <template>
-  <main class="about-page">
+  <main v-if="data" class="about-page">
     <CommonBlur />
     <HeaderBasic />
 		<HeaderMenu />
@@ -24,36 +24,24 @@
 
       <div class="about">
         <p class="about-title h6">About Us</p>
-        <p class="about-descr p1">
-          DOGADOGA is a creative partner for those who seek meaning, not just visuals.
-
-					We blend instinct and strategy to craft stories that redefine how brands connect with the world.
-
-					We don’t work for clients — we create with them.
-					<br>
-					<br>
-					“We wish to remain as we are.”
-					<br>
-					Not out of resistance, but out of essence — staying true to what moves us.
-        </p>
+        <div class="about-descr pre-line p1">
+					{{ data.about_us }}
+				</div>
       </div>
 
       <div class="info">
         <p class="info-title info-title-1 h6">Est</p>
         <div class="mission">
           <p class="mission-title h6">Our Mission</p>
-          <p class="mission-descr p1">
-            To turn ideas into experiences that move hearts and shift perception.
-						We believe in emotional precision — in crafting every frame with purpose, every story with honesty, and every project with the courage to stand apart.
+          <p class="mission-descr pre-line p1">
+            {{ data.our_mission }}
           </p>
         </div>
 
         <div class="vision">
           <p class="vision-title h6">Our Vision</p>
-          <p class="vision-descr p1">
-            To become the creative partner brands and artists trust when they want more than content — when they want impact.
-						We aim to shape a culture where visuals don’t just sell, they speak.
-						Where collaboration becomes creation.
+          <p class="vision-descr pre-line p1">
+            {{ data.our_vision }}
           </p>
         </div>
 
@@ -62,14 +50,8 @@
 
       <div class="services">
         <p class="services-title h6">Services</p>
-        <div class="services-descr p1">
-          <div>Creative Direction & Strategy</div>
-          <div>Commercial & Branded Films</div>
-          <div>Music Videos & Artist Visuals</div>
-          <div>Full-Cycle Production</div>
-          <div>CGI & AI-Driven Visuals</div>
-          <div>Campaign Development</div>
-          <div>Live & Digital Experiences</div>
+        <div class="services-descr pre-line p1">
+          {{ data.services }}
         </div>
       </div>
 
@@ -106,6 +88,26 @@ definePageMeta({
     mode: "out-in",
   },
 })
+
+const nuxtApp = useNuxtApp()
+
+const { data } = await useAsyncData<any>(
+  () => "about",
+  () => $fetch("/api/about"),
+  {
+    server: true,
+    lazy: false,
+    getCachedData: (key) =>
+      nuxtApp.payload.data[key] || nuxtApp.static.data[key],
+  }
+)
+
+if (!data.value) {
+  throw showError({
+    statusCode: 404,
+    statusMessage: "About not found",
+  })
+}
 
 onMounted(() => {
   scrollToggle();
