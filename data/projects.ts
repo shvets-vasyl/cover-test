@@ -56,6 +56,23 @@ export const projects = [
 		`
   },
 
+{
+		year: "2025",
+    name: "WBT garage • trailer",
+    type: "CARS",
+		video: "/video/project6.mp4",
+    photosList: [
+      "/images/wbt/1.png",
+      "/images/wbt/2.png",
+      "/images/wbt/3.png",
+      "/images/wbt/4.png",
+    ],
+    link: "/wbt-garage",
+		descr: `
+			WBT Garage is a video series that explores rare and collectible vehicles.
+		`
+  },
+
   {
 		year: "2025",
     name: "Commercial",
