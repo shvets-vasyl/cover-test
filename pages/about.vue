@@ -161,8 +161,8 @@ const scrollToggle = () => {
 	@include mobile {
 		margin-top: 0;
 		position: absolute;
-		right: 2.1rem;
-		top: 3.5rem;
+		right: 1rem;
+		top: 2.5rem;
 	}
 }
 .scroll-down {
