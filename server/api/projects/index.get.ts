@@ -4,6 +4,9 @@ export default defineEventHandler(async () => {
   try {
     const response = await $fetch(`${api_url}/api/v1/videos`)
 
+		console.log("Response:", response)
+
+
     return response
   } catch (error) {
     console.error("Error:", error)

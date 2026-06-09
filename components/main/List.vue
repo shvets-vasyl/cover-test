@@ -17,7 +17,11 @@
         </div>
 
         <div v-for="(photo, idx) in images" :key="idx" class="photo">
-          <img :src="api_url + photo" class="inner-img" alt="" />
+					<img
+						:src="photo.startsWith('http') ? photo : api_url + photo"
+						class="inner-img"
+						alt=""
+					/>
         </div>
 
         <div class="info">
@@ -37,6 +41,8 @@ const props = defineProps<{
 const { api_url } = useRuntimeConfig().public
 
 const bgRef = ref<HTMLDivElement | null>(null);
+
+
 
 const onEnter = (e: MouseEvent) => {
   const target = e.currentTarget as HTMLElement | null;
